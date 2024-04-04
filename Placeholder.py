@@ -16,6 +16,7 @@ import pyvisa
 
 #   Downconverters
     # Values from table to set filters
+    # Use the IF Name and RF tags to set values
 
 #   VSGs
     # Cal signal file
