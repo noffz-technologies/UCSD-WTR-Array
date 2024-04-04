@@ -3,13 +3,13 @@ import pyvisa
 
 # General function (logging_enable, error_enable, test_number, date, etc.)
 
-# Power sequence (notify user to validate power supply procedure)
+# Initialize sequence (notify user to validate power supply procedure)
 #   Power supply
     # Enable power
     # Validate power on rails is appropriate
 
 # -------------------------------------------------------------------------------
-# Instrument control parameters read from config.txt ()
+# Instrument control parameters read from config.ini ()
 #   Synths
     # Center frequency
     # Power
