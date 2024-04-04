@@ -4,6 +4,7 @@ import nidaqmx
 # Define a lookup table mapping RF and IF combinations to binary values for digital output lines.
 lookup_table = {
     'ALLOFF': (0, 0, 0, 0, 0),
+    'ALLON': (1, 1, 1, 1, 1),
     'RF1IF1': (1, 0, 0, 0, 0),
     'RF1IF2': (1, 0, 0, 1, 0),
     'RF1IF3': (1, 0, 0, 0, 1),
@@ -23,8 +24,7 @@ lookup_table = {
     'RF5IF1': (1, 0, 1, 0, 0),
     'RF5IF2': (1, 0, 1, 1, 0),
     'RF5IF3': (1, 0, 1, 0, 1),
-    'RF5IF4': (1, 0, 1, 1, 1),
-    'ALLON': (1, 1, 1, 1, 1)
+    'RF5IF4': (1, 0, 1, 1, 1)
 }
 
 class DAQController:
