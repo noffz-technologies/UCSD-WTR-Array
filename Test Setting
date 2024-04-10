@@ -1,0 +1,103 @@
+tz = 'z';
+fmt = 'yyyymmddHHMMss.ss z';
+DT = datetime(2015,3,8,'TimeZone',tz,'Format',fmt) + hours(1:4)
+Tnow = datetime('now','TimeZone',tz,'Format',fmt);
+Tdn=datenum(Tnow);
+sec=1/(24*60*60)
+dwell(1).type='alwaysOn';
+dwell(1).dwellCtrFreqGHz = 2.25;
+dwell(1).calFreqGHz= 2.255;
+dwell(1).calTxPwrDBm= 10.90;
+dwell(1).sampleFreqGHz= 12.5;
+dwell(1).channelSet= [1:8];
+dwell(1).Nsamps= 2^20;
+dwell(2).type='alwaysOn';
+dwell(2).dwellCtrFreqGHz = 5.85;
+dwell(2).calFreqGHz= 5.90;
+dwell(2).calTxPwrDBm= 11.90;
+dwell(2).sampleFreqGHz= 12.5;
+dwell(2).channelSet= [1:8];
+dwell(2).Nsamps= 2^20;
+dwell(3).type='alwaysOn';
+dwell(3).dwellCtrFreqGHz = 10.85;
+dwell(3).calFreqGHz= 10.845;
+dwell(3).calTxPwrDBm= 13.5;
+dwell(3).sampleFreqGHz= 25.0;
+dwell(3).channelSet= [2, 4, 6, 8];
+dwell(3).Nsamps= 2^20;
+dwell(4).type='intermittent';
+dwell(4).dwellCtrFreqGHz = 10.85;
+dwell(4).calFreqGHz= 10.845;
+dwell(4).calTxPwrDBm= 13.5;
+dwell(4).sampleFreqGHz= 25.0;
+dwell(4).channelSet= [2, 4, 6, 8];
+dwell(4).Nsamps= 2^20;
+dwell(5).type='intermittent';
+dwell(5).dwellCtrFreqGHz = 54.85;
+dwell(5).calFreqGHz= 10.845;
+dwell(5).calTxPwrDBm= 13.5;
+dwell(5).sampleFreqGHz= 25.0;
+dwell(5).channelSet= [2, 4, 6, 8];
+dwell(5).Nsamps= 2^20;
+Tstart = Tdn + 3*sec;
+%% SCHEDULE FOR DOWN-CONVERTER EQUIPPED SYSTEM
+schedDC(1).offsetTimeDN = 20;
+schedDC(1).sigIndex=4;
+schedDC(2).offsetTimeDN = 60;
+schedDC(2).sigIndex=3;
+...
+schedDC(250).offsetTimeSec = 60;
+schedDC(250).sigIndex=3028;
+setUpPeriodSec= 10;
+setUpPeriodDN= 10/(24*3600);
+%% TIMING CONTROL FOR DOWN-CONVERTER EQUIPPED SYSTEM
+ischedDC=1;
+while 1 ;
+% keep asking time
+tDateNumNow = datenum % get zulu date in datenum format
+% when we reach setup time commence setup
+if tDateNumNow >= ( schedDC(ischedDC).offsetTimeDN + TstartDN - setUpPeriodDN);
+setSystemDC(dwell(ischedDC)) % sets system parameters
+% when setup is done,
+while 1
+tDateNumNow = datenum % get zulu date in datenum format
+if tDateNumNow >= ( schedDC(ischedDC).offsetTimeDN + TstartDN - setUpPeriodDN);
+collectAndTransferDataDC(dwell(ischedDC));
+ischedDC=ischedDC+1;
+break
+end;
+end;
+end
+end;
+%% SCHEDULE FOR STRAIGHT-PATH SYSTEM
+schedST(1).offsetTimeDN = 20;
+schedST(1).sigIndex=4;
+schedST(2).offsetTimeDN = 60;
+schedST(2).sigIndex=3;
+...
+schedST(250).offsetTimeSec = 60;
+schedST(250).sigIndex=3028;
+setUpPeriodSec= 10;
+setUpPeriodDN= 10/(24*3600);
+%% TIMING CONTROL FOR STRAIGHT-PATH SYSTEM
+ischedST=1;
+while 1 ;
+% keep asking time
+tDateNumNow = datenum % get zulu date in datenum format
+% when we reach setup time commence setup
+if tDateNumNow >= ( schedST(ischedST).offsetTimeDN + TstartDN - setUpPeriodDN);
+setSystemST(dwell(ischedST)) % sets system parameters
+% when setup is done,
+while 1
+tDateNumNow = datenum % get zulu date in datenum format
+if tDateNumNow >= ( schedST(ischedST).offsetTimeDN + TstartDN - setUpPeriodDN);
+collectAndTransferDataST(dwell(ischedST));
+ischedST=ischedST+1;
+break
+end;
+end;
+end
+end;
+qq=0
+qq=0
+% for

@@ -26,7 +26,7 @@ scope.encoding = 'latin_1'  # native encoding for scope
 print(scope.query('*IDN?'))  # verifying communication
 
 # Enter filename
-filename = 'Tek000_000_ch4.mat'  # large 3.2GB test file, located in current working directory
+filename = 'Tek000_000_ch4.mat'  # large test file, located in current working directory
 
 r = scope.query("FILESystem:LDIR?")  # retrieving table of files from CWD along with num of bytes for each file
 

@@ -6,7 +6,7 @@ import pyvisa
 # Initialize sequence (notify user to validate power supply procedure)
 #   Power supply
     # Enable power
-    # Validate power on rails is appropriate
+    # Validate power on rails is appropriate?
 
 # -------------------------------------------------------------------------------
 # Instrument control parameters read from config.ini ()
