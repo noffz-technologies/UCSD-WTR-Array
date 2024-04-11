@@ -1,5 +1,6 @@
 import pyvisa
 
+
 class BNC845M:
     def __init__(self, resource_name):
         """
@@ -47,6 +48,7 @@ class BNC845M:
     def close(self):
         """Close the instrument connection."""
         self.instrument.close()
+
 
 # Example usage:
 if __name__ == "__main__":

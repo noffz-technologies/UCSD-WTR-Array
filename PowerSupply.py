@@ -1,49 +1,53 @@
 import pyvisa
-import time
 
 
-class PowerSupplyController:
-    def __init__(self, address):
+class NGP800PowerSupply:
+    def __init__(self, resource_name):
+        """
+        Initialize the Rohde & Schwarz NGP800 power supply.
+
+        Args:
+            resource_name (str): VISA resource name (e.g., 'TCPIP0::192.168.1.100::inst0::INSTR')
+        """
         self.rm = pyvisa.ResourceManager()
-        self.address = address
-        self.instrument = self.rm.open_resource(self.address)
+        self.instrument = self.rm.open_resource(resource_name)
+        self.instrument.timeout = 5000  # Set a reasonable timeout (in milliseconds)
 
-    def set_voltage(self, voltage, channel=1):
-        self.instrument.write(f"VOLT {voltage},(@{channel})")
+    def configure_channel(self, channel, voltage, current):
+        """
+        Configure the specified channel with the given voltage and current.
 
-    def set_power(self, power, channel=1):
-        self.instrument.write(f"POW {power},(@{channel})")
+        Args:
+            channel (int): Channel number (1, 2, or 3)
+            voltage (float): Voltage in volts
+            current (float): Current in amps
+        """
+        self.instrument.write(f"INST:SEL CH{channel}")
+        self.instrument.write(f"VOLT {voltage:.6f}")
+        self.instrument.write(f"CURR {current:.6f}")
 
-    def enable_channel(self, channel=1):
-        self.instrument.write(f"OUTP:STAT ON,(@{channel})")
+    def start_output(self):
+        """Start the output of all channels."""
+        self.instrument.write(":OUTP ON")
+        print("Output started for all channels")
 
-    def disable_channel(self, channel=1):
-        self.instrument.write(f"OUTP:STAT OFF,(@{channel})")
+    def stop_output(self):
+        """Stop the output of all channels."""
+        self.instrument.write(":OUTP OFF")
+        print("Output stopped for all channels")
 
-    def check_output(self, voltage_expected, power_expected, channel=1):
-        voltage_actual = float(self.instrument.query(f"MEAS:VOLT? (@{channel})"))
-        power_actual = float(self.instrument.query(f"MEAS:POW? (@{channel})"))
-
-        if abs(voltage_actual - voltage_expected) > 0.1:
-            print(
-                f"Warning: Actual voltage ({voltage_actual}V) does not match expected voltage ({voltage_expected}V) for channel {channel}")
-
-        if abs(power_actual - power_expected) > 0.1:
-            print(
-                f"Warning: Actual power ({power_actual}W) does not match expected power ({power_expected}W) for channel {channel}")
+    def close(self):
+        """Close the instrument connection."""
+        self.instrument.close()
 
 
-# Example usage
+# Example usage:
 if __name__ == "__main__":
-    # Replace 'TCPIP0::192.168.1.100::inst0::INSTR' with the actual address of your power supply
-    power_supply = PowerSupplyController('TCPIP0::192.168.1.100::inst0::INSTR')
-
-    power_supply.set_voltage(5)  # Set voltage to 5V
-    power_supply.set_power(10)  # Set power to 10W
-    power_supply.enable_channel()  # Enable the channel
-
-    time.sleep(2)  # Wait for the power supply to stabilize
-
-    power_supply.check_output(5, 10)  # Check if output matches expected values
-
-    power_supply.disable_channel()  # Disable the channel
+    ngp800 = NGP800PowerSupply(resource_name="TCPIP0::192.168.1.100::inst0::INSTR")
+    ngp800.configure_channel(channel=1, voltage=6, current=1)  # Configure channel 1
+    ngp800.configure_channel(channel=2, voltage=6, current=1)  # Configure channel 2
+    ngp800.configure_channel(channel=3, voltage=12, current=3)  # Configure channel 3
+    ngp800.start_output()  # Start the output for all channels
+    # Do something with the output...
+    ngp800.stop_output()  # Stop the output for all channels
+    ngp800.close()  # Close the connection
