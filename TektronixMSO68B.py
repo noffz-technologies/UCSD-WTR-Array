@@ -1,6 +1,5 @@
 import pyvisa
 
-
 class TektronixMSO68B:
     def __init__(self, visa_address):
         self.visa_address = visa_address
@@ -49,6 +48,14 @@ class TektronixMSO68B:
     def close(self):
         self.instrument.close()
 
+    def recall_setup(self, setup_path):
+        self.instrument.write(f":RECAll:SETUp {setup_path}")
+
+    def force_trigger(self):
+        self.instrument.write("FPANEL:PRESS FORCETRIG")
+
+    def operation_complete(self):
+        return self.instrument.query('*OPC?').strip()
 
 if __name__ == "__main__":
     visa_address = "TCPIP0::192.168.141.136::inst0::INSTR"  # Replace this with your instrument's VISA address
@@ -60,7 +67,7 @@ if __name__ == "__main__":
 
     # Set Channels
     try:
-        channels_to_set_on = [1, 3, 5, 7]
+        channels_to_set_on = [1, 2]
         mso.set_channels(channels=channels_to_set_on, state="ON")
         print(f"Channels {channels_to_set_on} set to ON.")
 
@@ -69,13 +76,18 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error: {str(e)}")
 
-    # Set sample rate to 1 MS/s
-    sample_rate = mso.set_sample_rate(1000000)
+    # Set sample rate to 12.5 MS/s
+    sample_rate = mso.set_sample_rate(12500000)
     print(f"Sample Rate set to: {sample_rate} samples/s")
 
     # Set record length to 1000 points
-    record_length = mso.set_record_length(1000)
+    record_length = mso.set_record_length(100000)
     print(f"Record Length set to: {record_length} points")
+
+    # Force trigger
+    mso.force_trigger()
+    print("Trigger forced.")
+    mso.operation_complete()
 
     # Close the connection to the instrument
     mso.close()

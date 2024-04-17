@@ -27,7 +27,8 @@ lookup_table = {
     'RF5IF4': (1, 0, 1, 1, 1)
 }
 
-class DAQController:
+
+class DIOController:
     def __init__(self):
         # Initialize a task for communication with the NI DAQ hardware.
         self.task = nidaqmx.Task()
@@ -80,10 +81,10 @@ class DAQController:
 # Example usage:
 if __name__ == "__main__":
     # Create an instance of DAQController.
-    daq = DAQController()
+    daq = DIOController()
     try:
         # Set RF and IF combination for all ports.
-        daq.set_all_ports_rf_if_values('ALLOFF')
+        daq.set_all_ports_rf_if_values('RF3IF1')
         # Update the digital output.
         daq.update_digital_output()
 
