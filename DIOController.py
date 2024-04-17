@@ -29,7 +29,7 @@ lookup_table = {
 
 
 class DIOController:
-    def __init__(self):
+    def __init__(self, resource_name):
         # Initialize a task for communication with the NI DAQ hardware.
         self.task = nidaqmx.Task()
         self.num_ports = 8  # Total number of ports on the DAQ device.
@@ -40,7 +40,7 @@ class DIOController:
         # Add digital output channels to the task for each line.
         for DIOport in range(self.num_ports):
             for DIOline in range(self.num_lines_per_port):
-                self.task.do_channels.add_do_chan(f'USB-6509/port{DIOport}/line{DIOline}',
+                self.task.do_channels.add_do_chan(f'{resource_name}/port{DIOport}/line{DIOline}',
                                                   line_grouping=nidaqmx.constants.LineGrouping.CHAN_PER_LINE)
 
     def set_line_value(self, port, line, value):
@@ -81,10 +81,10 @@ class DIOController:
 # Example usage:
 if __name__ == "__main__":
     # Create an instance of DAQController.
-    daq = DIOController()
+    daq = DIOController("USB-6509-1")
     try:
         # Set RF and IF combination for all ports.
-        daq.set_all_ports_rf_if_values('RF3IF1')
+        daq.set_all_ports_rf_if_values('ALLOFF')
         # Update the digital output.
         daq.update_digital_output()
 

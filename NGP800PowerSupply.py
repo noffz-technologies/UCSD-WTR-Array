@@ -13,6 +13,11 @@ class NGP800PowerSupply:
         self.instrument = self.rm.open_resource(resource_name)
         self.instrument.timeout = 5000  # Set a reasonable timeout (in milliseconds)
 
+    def identify(self):
+        """Query and print the instrument identification."""
+        idn = self.instrument.query("*IDN?")
+        print(f"Instrument identification: {idn.strip()}")
+
     def configure_channel(self, channel, voltage, current):
         """
         Configure the specified channel with the given voltage and current.
@@ -44,6 +49,7 @@ class NGP800PowerSupply:
 # Example usage:
 if __name__ == "__main__":
     ngp800 = NGP800PowerSupply(resource_name="TCPIP0::192.168.1.100::inst0::INSTR")
+    ngp800.identify() # Print resource to validate connection
     ngp800.configure_channel(channel=1, voltage=6, current=1)  # Configure channel 1
     ngp800.configure_channel(channel=2, voltage=6, current=1)  # Configure channel 2
     ngp800.configure_channel(channel=3, voltage=12, current=3)  # Configure channel 3

@@ -42,7 +42,7 @@ class TektronixMSO68B:
             command = f"DISplay:GLObal:CH{channel}:STATE {state}"
             self.instrument.write(command)
 
-    def get_instrument_info(self):
+    def identify(self):
         return self.instrument.query('*IDN?').strip()
 
     def close(self):
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     mso = TektronixMSO68B(visa_address)
 
     # Get information about the device
-    instrument_info = mso.get_instrument_info()
+    instrument_info = mso.identify()
     print(f"Instrument Information: {instrument_info}")
 
     # Set Channels
