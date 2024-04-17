@@ -154,16 +154,16 @@ def main():
     # Read configuration
     general_config, smw200a_config, ngp800_config, bnc845m_config, dio_config, tektronix_config, dwells_config = read_config()
 
-    # Initialize NGP800PowerSupply
-    ngp800 = NGP800PowerSupply(f"TCPIP0::{ngp800_config['resource_address']}::inst0::INSTR")
-
-    ngp800.configure_channel(1, ngp800_config['channels']['Ch1']['voltage'],
-                             ngp800_config['channels']['Ch1']['current'])
-    ngp800.configure_channel(2, ngp800_config['channels']['Ch2']['voltage'],
-                             ngp800_config['channels']['Ch2']['current'])
-    ngp800.configure_channel(3, ngp800_config['channels']['Ch3']['voltage'],
-                             ngp800_config['channels']['Ch3']['current'])
-    ngp800.start_output()  # Enable power
+    # # Initialize NGP800PowerSupply
+    # ngp800 = NGP800PowerSupply(f"TCPIP0::{ngp800_config['resource_address']}::inst0::INSTR")
+    #
+    # ngp800.configure_channel(1, ngp800_config['channels']['Ch1']['voltage'],
+    #                          ngp800_config['channels']['Ch1']['current'])
+    # ngp800.configure_channel(2, ngp800_config['channels']['Ch2']['voltage'],
+    #                          ngp800_config['channels']['Ch2']['current'])
+    # ngp800.configure_channel(3, ngp800_config['channels']['Ch3']['voltage'],
+    #                          ngp800_config['channels']['Ch3']['current'])
+    # ngp800.start_output()  # Enable power
 
     # Initialize SMW200A
     smw200a = SMW200A(f"TCPIP0::{smw200a_config['resource_address']}::inst0::INSTR")
@@ -172,10 +172,10 @@ def main():
     # Initialize BNC845M
     bnc1 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_1']['resource_address']}::inst0::INSTR")
     bnc1.identify()
-    bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
-    bnc2.identify()
     bnc1.set_power_level(power_level=bnc845m_config['BNC845M_1']['power_level'])
-    bnc1.set_power_level(power_level=bnc845m_config['BNC845M_2']['power_level'])
+    # bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
+    # bnc2.identify()
+    # bnc2.set_power_level(power_level=bnc845m_config['BNC845M_2']['power_level'])
 
     # Initialize DIOController
     dio = DIOController(dio_config['resource_name'])
@@ -183,8 +183,8 @@ def main():
     # Initialize TektronixMSO68B
     tektronix1 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_1']['resource_address']}::inst0::INSTR")
     tektronix1.identify()
-    tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
-    tektronix2.identify()
+    # tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
+    # tektronix2.identify()
 
     # Main loop for dwells
     for dwell_name, dwell_config in dwells_config.items():
@@ -201,9 +201,9 @@ def main():
         # Set parameters for BNC845M
         LO1, LO2, RFIF = set_instrument_parameters(center_freq)
         bnc1.set_frequency(LO1)
-        bnc2.set_frequency(LO2)
         bnc1.start_output()
-        bnc2.start_output()
+        # bnc2.set_frequency(LO2)
+        # bnc2.start_output()
 
         # Set digital values
         dio.set_all_ports_rf_if_values(RFIF)    # Set RF and IF combination for all ports.
@@ -227,10 +227,10 @@ def main():
         tektronix1.set_record_length(record_length_1)
         tektronix1.force_trigger()
 
-        tektronix2.set_channels(set_channels_2, "ON")
-        tektronix2.set_sample_rate(sample_rate_2)
-        tektronix2.set_record_length(record_length_2)
-        tektronix2.force_trigger()
+        # tektronix2.set_channels(set_channels_2, "ON")
+        # tektronix2.set_sample_rate(sample_rate_2)
+        # tektronix2.set_record_length(record_length_2)
+        # tektronix2.force_trigger()
 
         # Wait for dwell spacing
         time.sleep(general_config['dwell_spacing'])
@@ -238,19 +238,19 @@ def main():
     # Shut down
     smw200a.stop_signal()
     bnc1.stop_output()
-    bnc2.stop_output()
+    # bnc2.stop_output()
     dio.set_all_ports_rf_if_values("ALLOFF")
     dio.update_digital_output()
 
     # Cleanup
     smw200a.close()
     bnc1.close()
-    bnc2.close()
+    # bnc2.close()
     dio.close()
     tektronix1.close()
-    tektronix2.close()
-    ngp800.stop_output()  # Disable power
-    ngp800.close()
+    # tektronix2.close()
+    # ngp800.stop_output()  # Disable power
+    # ngp800.close()
 
 
 if __name__ == "__main__":
