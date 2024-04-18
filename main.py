@@ -5,6 +5,11 @@ from DIOController import DIOController
 from NGP800PowerSupply import NGP800PowerSupply
 from SMW200A import SMW200A
 from TektronixMSO68B import TektronixMSO68B
+import logging
+
+# Set up logging configuration
+logging.basicConfig(filename='logs/instrument.log', level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def read_config():
@@ -46,10 +51,12 @@ def read_config():
     # TektronixMSO68B parameters
     tektronix_config = {}
     tektronix_config['TektronixMSO68B_1'] = {
-        'resource_address': config.get('TektronixMSO68B_1', 'resource_address')
+        'resource_address': config.get('TektronixMSO68B_1', 'resource_address'),
+        'settings_path': config.get('TektronixMSO68B_1', 'settings_path')
     }
     tektronix_config['TektronixMSO68B_2'] = {
-        'resource_address': config.get('TektronixMSO68B_2', 'resource_address')
+        'resource_address': config.get('TektronixMSO68B_2', 'resource_address'),
+        'settings_path': config.get('TektronixMSO68B_2', 'settings_path')
     }
 
     # Dwell configurations
@@ -151,106 +158,126 @@ def set_instrument_parameters(center_freq):
 
 
 def main():
-    # Read configuration
-    general_config, smw200a_config, ngp800_config, bnc845m_config, dio_config, tektronix_config, dwells_config = read_config()
+    try:
+        # Read configuration
+        general_config, smw200a_config, ngp800_config, bnc845m_config, dio_config, tektronix_config, dwells_config = read_config()
 
-    # # Initialize NGP800PowerSupply
-    # ngp800 = NGP800PowerSupply(f"TCPIP0::{ngp800_config['resource_address']}::inst0::INSTR")
-    #
-    # ngp800.configure_channel(1, ngp800_config['channels']['Ch1']['voltage'],
-    #                          ngp800_config['channels']['Ch1']['current'])
-    # ngp800.configure_channel(2, ngp800_config['channels']['Ch2']['voltage'],
-    #                          ngp800_config['channels']['Ch2']['current'])
-    # ngp800.configure_channel(3, ngp800_config['channels']['Ch3']['voltage'],
-    #                          ngp800_config['channels']['Ch3']['current'])
-    # ngp800.start_output()  # Enable power
+        # # Initialize NGP800PowerSupply
+        # ngp800 = NGP800PowerSupply(f"TCPIP0::{ngp800_config['resource_address']}::inst0::INSTR")
+        #
+        # ngp800.configure_channel(1, ngp800_config['channels']['Ch1']['voltage'],
+        #                          ngp800_config['channels']['Ch1']['current'])
+        # ngp800.configure_channel(2, ngp800_config['channels']['Ch2']['voltage'],
+        #                          ngp800_config['channels']['Ch2']['current'])
+        # ngp800.configure_channel(3, ngp800_config['channels']['Ch3']['voltage'],
+        #                          ngp800_config['channels']['Ch3']['current'])
+        # ngp800.start_output()  # Enable power
 
-    # Initialize SMW200A
-    smw200a = SMW200A(f"TCPIP0::{smw200a_config['resource_address']}::inst0::INSTR")
-    smw200a.identify()  # Print instrument identification
+        # Initialize SMW200A
+        smw200a = SMW200A(f"TCPIP0::{smw200a_config['resource_address']}::inst0::INSTR")
+        smw200a.identify()  # Print instrument identification
+        input("Switch on junction box switches from left to right. Press Enter when ready to proceed..."
+              "")
 
-    # Initialize BNC845M
-    bnc1 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_1']['resource_address']}::inst0::INSTR")
-    bnc1.identify()
-    bnc1.set_power_level(power_level=bnc845m_config['BNC845M_1']['power_level'])
-    # bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
-    # bnc2.identify()
-    # bnc2.set_power_level(power_level=bnc845m_config['BNC845M_2']['power_level'])
+        # Initialize BNC845M
+        bnc1 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_1']['resource_address']}::inst0::INSTR")
+        bnc1.identify()
+        bnc1.set_power_level(power_level=bnc845m_config['BNC845M_1']['power_level'])
+        # bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
+        # bnc2.identify()
+        # bnc2.set_power_level(power_level=bnc845m_config['BNC845M_2']['power_level'])
 
-    # Initialize DIOController
-    dio = DIOController(dio_config['resource_name'])
+        # Initialize DIOController
+        dio = DIOController(dio_config['resource_name'])
 
-    # Initialize TektronixMSO68B
-    tektronix1 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_1']['resource_address']}::inst0::INSTR")
-    tektronix1.identify()
-    # tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
-    # tektronix2.identify()
+        # Initialize TektronixMSO68B
+        tektronix1 = TektronixMSO68B(
+            f"TCPIP0::{tektronix_config['TektronixMSO68B_1']['resource_address']}::inst0::INSTR")
+        tektronix1.identify()
+        tektronix1.write("*CLS")  # clear errors in the queue
+        tektronix1.recall_setup(tektronix_config['TektronixMSO68B_1']['settings_path'])
+        # tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
+        # tektronix2.identify()
+        # tektronix2.write("*CLS")  # clear errors in the queue
+        # tektronix2.recall_setup(tektronix_config['TektronixMSO68B_2']['settings_path'])
 
-    # Main loop for dwells
-    for dwell_name, dwell_config in dwells_config.items():
-        center_freq = dwell_config['center_frequency']
-        set_channels_1 = dwell_config['set_channels_1']
-        print(set_channels_1)
-        sample_rate_1 = dwell_config['sample_rate_1']
-        record_length_1 = dwell_config['record_length_1']
-        set_channels_2 = dwell_config['set_channels_2']
-        print(set_channels_2)
-        sample_rate_2 = dwell_config['sample_rate_2']
-        record_length_2 = dwell_config['record_length_2']
+    except Exception as e:
+        logging.exception("An error occurred during initialization: %s", str(e))
+    else:
+        try:
+            # Main loop for dwells
+            for dwell_name, dwell_config in dwells_config.items():
+                center_freq = dwell_config['center_frequency']
+                set_channels_1 = dwell_config['set_channels_1']
+                print(set_channels_1)
+                sample_rate_1 = dwell_config['sample_rate_1']
+                record_length_1 = dwell_config['record_length_1']
+                set_channels_2 = dwell_config['set_channels_2']
+                print(set_channels_2)
+                sample_rate_2 = dwell_config['sample_rate_2']
+                record_length_2 = dwell_config['record_length_2']
 
-        # Set parameters for BNC845M
-        LO1, LO2, RFIF = set_instrument_parameters(center_freq)
-        bnc1.set_frequency(LO1)
-        bnc1.start_output()
-        # bnc2.set_frequency(LO2)
-        # bnc2.start_output()
+                # Set parameters for BNC845M
+                LO1, LO2, RFIF = set_instrument_parameters(center_freq)
+                bnc1.set_frequency(LO1 * 1e6)  # Convert MHz to Hz
+                bnc1.start_output()
+                # bnc2.set_frequency(LO2 * 1e6)  # Convert MHz to Hz
+                # bnc2.start_output()
 
-        # Set digital values
-        dio.set_all_ports_rf_if_values(RFIF)    # Set RF and IF combination for all ports.
-        dio.update_digital_output()     # Update the digital output.
-        written_values = dio.read_written_values()        # Read back the written values.
-        print("Written Values:")
-        # Iterate over ports and lines to print the written values.
-        for port in range(dio.num_ports):
-            for line in range(dio.num_lines_per_port):
-                index = port * dio.num_lines_per_port + line
-                value = written_values[index]
-                print(f"Port {port}, Line {line}: {value}")
+                # Set digital values
+                dio.set_all_ports_rf_if_values(RFIF)  # Set RF and IF combination for all ports.
+                dio.update_digital_output()  # Update the digital output.
+                written_values = dio.read_written_values()  # Read back the written values.
+                print("Written Values:")
+                # Iterate over ports and lines to print the written values.
+                for port in range(dio.num_ports):
+                    for line in range(dio.num_lines_per_port):
+                        index = port * dio.num_lines_per_port + line
+                        value = written_values[index]
+                        print(f"Port {port}, Line {line}: {value}")
 
-        # Set parameters for SMW200A
-        smw200a.set_frequency(center_freq * 1e6)  # Convert MHz to Hz
-        smw200a.set_power_level(smw200a_config['power_level'])
+                # Set parameters for SMW200A
+                smw200a.set_frequency(center_freq * 1e6)  # Convert MHz to Hz
+                smw200a.set_power_level(smw200a_config['power_level'])
+                smw200a.start_signal()
 
-        # Set parameters for TektronixMSO68B
-        tektronix1.set_channels(set_channels_1, "ON")
-        tektronix1.set_sample_rate(sample_rate_1)
-        tektronix1.set_record_length(record_length_1)
-        tektronix1.force_trigger()
+                # Set parameters for TektronixMSO68B
+                tektronix1.set_channels(set_channels_1, "ON")
+                tektronix1.set_sample_rate(sample_rate_1)
+                tektronix1.set_record_length(record_length_1)
+                tektronix1.force_trigger()
+                tektronix1.query("*ESR?")  # Event status register value
+                print(tektronix1.query("ALLEV?"))  # All events, more descriptive for errors detected
 
-        # tektronix2.set_channels(set_channels_2, "ON")
-        # tektronix2.set_sample_rate(sample_rate_2)
-        # tektronix2.set_record_length(record_length_2)
-        # tektronix2.force_trigger()
+                # tektronix2.set_channels(set_channels_2, "ON")
+                # tektronix2.set_sample_rate(sample_rate_2)
+                # tektronix2.set_record_length(record_length_2)
+                # tektronix2.force_trigger()
+                # tektronix2.query("*ESR?")  # Event status register value
+                # print(tektronix2.query("ALLEV?"))  # All events, more descriptive for errors detected
 
-        # Wait for dwell spacing
-        time.sleep(general_config['dwell_spacing'])
+                # Wait for dwell spacing
+                time.sleep(general_config['dwell_spacing'])
+        except Exception as e:
+            logging.exception("An error occurred during initialization: %s", str(e))
+    finally:
+        # Shut down
+        smw200a.stop_signal()
+        bnc1.stop_output()
+        # bnc2.stop_output()
+        dio.set_all_ports_rf_if_values("ALLOFF")
+        dio.update_digital_output()
 
-    # Shut down
-    smw200a.stop_signal()
-    bnc1.stop_output()
-    # bnc2.stop_output()
-    dio.set_all_ports_rf_if_values("ALLOFF")
-    dio.update_digital_output()
-
-    # Cleanup
-    smw200a.close()
-    bnc1.close()
-    # bnc2.close()
-    dio.close()
-    tektronix1.close()
-    # tektronix2.close()
-    # ngp800.stop_output()  # Disable power
-    # ngp800.close()
+        # Cleanup
+        smw200a.close()
+        bnc1.close()
+        # bnc2.close()
+        dio.close()
+        tektronix1.close()
+        # tektronix2.close()
+        # ngp800.stop_output()  # Disable power
+        # ngp800.close()
+        input("Switch off junction box switches from right to left. Press Enter to finish...")
 
 
 if __name__ == "__main__":

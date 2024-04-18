@@ -11,12 +11,14 @@ class TektronixMSO68B:
 
     def set_sample_rate(self, sample_rate):
         self.instrument.write(f':HORizontal:MODE:SAMPLERate {sample_rate}')
+        self.instrument.query("*OPC?") #make sure operations are complete before continuing
         # Read back the sample rate setting
         response = self.instrument.query(':HORizontal:MODE:SAMPLERate?')
         return response.strip()
 
     def set_record_length(self, record_length):
         self.instrument.write(f':HORizontal:RECOrdlength {record_length}')
+        self.instrument.query("*OPC?") #make sure operations are complete before continuing
         # Read back the record length setting
         response = self.instrument.query(':HORizontal:RECOrdlength?')
         return response.strip()
@@ -42,6 +44,9 @@ class TektronixMSO68B:
             command = f"DISplay:GLObal:CH{channel}:STATE {state}"
             self.instrument.write(command)
 
+        self.instrument.query("*OPC?") #make sure operations are complete before continuing
+
+
     def identify(self):
         return self.instrument.query('*IDN?').strip()
 
@@ -49,25 +54,32 @@ class TektronixMSO68B:
         self.instrument.close()
 
     def recall_setup(self, setup_path):
-        self.instrument.write(f":RECAll:SETUp {setup_path}")
+        self.instrument.write(f':RECAll:SETUp "{setup_path}"')
+        self.instrument.query("*OPC?")
 
     def force_trigger(self):
         self.instrument.write("FPANEL:PRESS FORCETRIG")
 
-    def operation_complete(self):
-        return self.instrument.query('*OPC?').strip()
+    def write(self, string):
+        self.instrument.write(string)
+
+    def query(self, string):
+        return(self.instrument.query(string))
+
 
 if __name__ == "__main__":
     visa_address = "TCPIP0::192.168.141.136::inst0::INSTR"  # Replace this with your instrument's VISA address
     mso = TektronixMSO68B(visa_address)
+    mso.write("*CLS")  # clear errors in the queue
 
     # Get information about the device
     instrument_info = mso.identify()
     print(f"Instrument Information: {instrument_info}")
+    mso.recall_setup("C:/Dwell.set")
 
     # Set Channels
     try:
-        channels_to_set_on = [1, 2]
+        channels_to_set_on = [1]
         mso.set_channels(channels=channels_to_set_on, state="ON")
         print(f"Channels {channels_to_set_on} set to ON.")
 
@@ -87,7 +99,7 @@ if __name__ == "__main__":
     # Force trigger
     mso.force_trigger()
     print("Trigger forced.")
-    mso.operation_complete()
-
+    mso.query("*ESR?")  # Event status register value
+    print(mso.query("ALLEV?"))  # All events, more descriptive for errors detected
     # Close the connection to the instrument
     mso.close()

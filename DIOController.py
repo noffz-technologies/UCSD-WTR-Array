@@ -81,10 +81,10 @@ class DIOController:
 # Example usage:
 if __name__ == "__main__":
     # Create an instance of DAQController.
-    daq = DIOController("USB-6509-1")
+    daq = DIOController("USB-6509")
     try:
         # Set RF and IF combination for all ports.
-        daq.set_all_ports_rf_if_values('ALLOFF')
+        daq.set_all_ports_rf_if_values('RF3IF1')
         # Update the digital output.
         daq.update_digital_output()
 
