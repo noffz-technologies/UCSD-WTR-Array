@@ -20,8 +20,7 @@ def read_config():
     general_config = {'dwell_spacing': config.getint('General', 'dwell_spacing')}
 
     # SMW200A parameters
-    smw200a_config = {'resource_address': config.get('SMW200A', 'resource_address'),
-                      'power_level': config.getint('SMW200A', 'power_level')}
+    smw200a_config = {'resource_address': config.get('SMW200A', 'resource_address')}
 
     # NGP800PowerSupply parameters
     ngp800_config = {'resource_address': config.get('NGP800PowerSupply', 'resource_address'), 'channels': {
@@ -64,7 +63,9 @@ def read_config():
     for section in config.sections():
         if section.startswith('Dwell_'):
             dwell = {}
-            dwell['center_frequency'] = config.getint(section, 'center_frequency')
+            dwell['dwell_center_frequency'] = config.getint(section, 'dwell_center_frequency')
+            dwell['cal_center_frequency'] = config.getint(section, 'cal_center_frequency')
+            dwell['cal_power'] = config.getint(section, 'cal_power')
             dwell['set_channels_1'] = eval(config.get(section, 'set_channels_1'))
             dwell['sample_rate_1'] = config.getint(section, 'sample_rate_1')
             dwell['record_length_1'] = config.getint(section, 'record_length_1')
@@ -76,80 +77,80 @@ def read_config():
     return general_config, smw200a_config, ngp800_config, bnc845m_config, dio_config, tektronix_config, dwells_config
 
 
-def set_instrument_parameters(center_freq):
+def set_instrument_parameters(dwell_center_freq):
     # Define default values
     LO1, LO2, RFIF = None, None, None
 
     # Define conditions and outputs for each frequency range
-    if 500 <= center_freq <= 1000:
+    if 500 <= dwell_center_freq <= 1000:
         LO1, LO2, RFIF = 4600, 5000, "RF1IF1"
-    elif 1000 < center_freq <= 1500:
+    elif 1000 < dwell_center_freq <= 1500:
         LO1, LO2, RFIF = 5100, 5000, "RF1IF1"
-    elif 1500 < center_freq <= 2000:
+    elif 1500 < dwell_center_freq <= 2000:
         LO1, LO2, RFIF = 5600, 5000, "RF1IF1"
-    elif 2000 < center_freq <= 2500:
+    elif 2000 < dwell_center_freq <= 2500:
         LO1, LO2, RFIF = 6100, 5000, "RF1IF1"
-    elif 2500 < center_freq <= 3000:
+    elif 2500 < dwell_center_freq <= 3000:
         LO1, LO2, RFIF = 9500, 7900, "RF2IF3"
-    elif 3000 < center_freq <= 3500:
+    elif 3000 < dwell_center_freq <= 3500:
         LO1, LO2, RFIF = 10000, 7900, "RF2IF3"
-    elif 3500 < center_freq <= 4000:
+    elif 3500 < dwell_center_freq <= 4000:
         LO1, LO2, RFIF = 10500, 7900, "RF2IF3"
-    elif 4000 < center_freq <= 4500:
+    elif 4000 < dwell_center_freq <= 4500:
         LO1, LO2, RFIF = 11000, 7900, "RF2IF3"
-    elif 4500 < center_freq <= 5000:
+    elif 4500 < dwell_center_freq <= 5000:
         LO1, LO2, RFIF = 11500, 7900, "RF2IF3"
-    elif 5000 < center_freq <= 5500:
+    elif 5000 < dwell_center_freq <= 5500:
         LO1, LO2, RFIF = 9000, 4900, "RF2IF3"
-    elif 5500 < center_freq <= 6000:
+    elif 5500 < dwell_center_freq <= 6000:
         LO1, LO2, RFIF = 9500, 4900, "RF3IF1"
-    elif 6000 < center_freq <= 6500:
+    elif 6000 < dwell_center_freq <= 6500:
         LO1, LO2, RFIF = 10000, 4900, "RF3IF1"
-    elif 6500 < center_freq <= 7000:
+    elif 6500 < dwell_center_freq <= 7000:
         LO1, LO2, RFIF = 10500, 4900, "RF3IF1"
-    elif 7000 < center_freq <= 7500:
+    elif 7000 < dwell_center_freq <= 7500:
         LO1, LO2, RFIF = 11000, 4900, "RF3IF1"
-    elif 7500 < center_freq <= 8000:
+    elif 7500 < dwell_center_freq <= 8000:
         LO1, LO2, RFIF = 11500, 4900, "RF3IF1"
-    elif 8000 < center_freq <= 8500:
+    elif 8000 < dwell_center_freq <= 8500:
         LO1, LO2, RFIF = 12500, 5400, "RF4IF2"
-    elif 8500 < center_freq <= 9000:
+    elif 8500 < dwell_center_freq <= 9000:
         LO1, LO2, RFIF = 13000, 5400, "RF4IF2"
-    elif 9000 < center_freq <= 9500:
+    elif 9000 < dwell_center_freq <= 9500:
         LO1, LO2, RFIF = 13500, 5400, "RF4IF2"
-    elif 9500 < center_freq <= 10000:
+    elif 9500 < dwell_center_freq <= 10000:
         LO1, LO2, RFIF = 14000, 5400, "RF4IF2"
-    elif 10000 < center_freq <= 10500:
+    elif 10000 < dwell_center_freq <= 10500:
         LO1, LO2, RFIF = 14500, 5400, "RF4IF2"
-    elif 10500 < center_freq <= 11000:
+    elif 10500 < dwell_center_freq <= 11000:
         LO1, LO2, RFIF = 15000, 5400, "RF4IF2"
-    elif 11000 < center_freq <= 11500:
+    elif 11000 < dwell_center_freq <= 11500:
         LO1, LO2, RFIF = 15500, 5400, "RF4IF2"
-    elif 11500 < center_freq <= 12000:
+    elif 11500 < dwell_center_freq <= 12000:
         LO1, LO2, RFIF = 16000, 5400, "RF4IF2"
-    elif 12000 < center_freq <= 12500:
+    elif 12000 < dwell_center_freq <= 12500:
         LO1, LO2, RFIF = 8500, 4900, "RF5IF1"
-    elif 12500 < center_freq <= 13000:
+    elif 12500 < dwell_center_freq <= 13000:
         LO1, LO2, RFIF = 9000, 4900, "RF5IF1"
-    elif 13000 < center_freq <= 13500:
+    elif 13000 < dwell_center_freq <= 13500:
         LO1, LO2, RFIF = 9500, 4900, "RF5IF1"
-    elif 13500 < center_freq <= 14000:
+    elif 13500 < dwell_center_freq <= 14000:
         LO1, LO2, RFIF = 10000, 4900, "RF5IF1"
-    elif 14000 < center_freq <= 14500:
+    elif 14000 < dwell_center_freq <= 14500:
         LO1, LO2, RFIF = 9800, 5600, "RF5IF2"
-    elif 14500 < center_freq <= 15000:
+    elif 14500 < dwell_center_freq <= 15000:
         LO1, LO2, RFIF = 10300, 5600, "RF5IF2"
-    elif 15000 < center_freq <= 15500:
+    elif 15000 < dwell_center_freq <= 15500:
         LO1, LO2, RFIF = 8500, 7900, "RF5IF3"
-    elif 15500 < center_freq <= 16000:
+    elif 15500 < dwell_center_freq <= 16000:
         LO1, LO2, RFIF = 9000, 7900, "RF5IF3"
-    elif 16000 < center_freq <= 16500:
+    elif 16000 < dwell_center_freq <= 16500:
         LO1, LO2, RFIF = 9500, 7900, "RF5IF3"
-    elif 16500 < center_freq <= 17000:
+    elif 16500 < dwell_center_freq <= 17000:
         LO1, LO2, RFIF = 10000, 7900, "RF5IF3"
-    elif 17000 < center_freq <= 17500:
+    elif 17000 < dwell_center_freq <= 17500:
         LO1, LO2, RFIF = 9800, 8600, "RF5IF4"
-    elif 17500 < center_freq <= 18000:
+    elif 17500 < dwell_center_freq <= 18000:
         LO1, LO2, RFIF = 10300, 8600, "RF5IF4"
     else:
         raise ValueError("Invalid center frequency value")
@@ -207,7 +208,9 @@ def main():
         try:
             # Main loop for dwells
             for dwell_name, dwell_config in dwells_config.items():
-                center_freq = dwell_config['center_frequency']
+                dwell_center_freq = dwell_config['dwell_center_frequency']
+                cal_center_freq = dwell_config['cal_center_frequency']
+                cal_power = dwell_config['cal_power']
                 set_channels_1 = dwell_config['set_channels_1']
                 print(set_channels_1)
                 sample_rate_1 = dwell_config['sample_rate_1']
@@ -218,7 +221,7 @@ def main():
                 record_length_2 = dwell_config['record_length_2']
 
                 # Set parameters for BNC845M
-                LO1, LO2, RFIF = set_instrument_parameters(center_freq)
+                LO1, LO2, RFIF = set_instrument_parameters(dwell_center_freq)
                 bnc1.set_frequency(LO1 * 1e6)  # Convert MHz to Hz
                 bnc1.start_output()
                 # bnc2.set_frequency(LO2 * 1e6)  # Convert MHz to Hz
@@ -237,8 +240,8 @@ def main():
                         print(f"Port {port}, Line {line}: {value}")
 
                 # Set parameters for SMW200A
-                smw200a.set_frequency(center_freq * 1e6)  # Convert MHz to Hz
-                smw200a.set_power_level(smw200a_config['power_level'])
+                smw200a.set_frequency(cal_center_freq * 1e6)  # Convert MHz to Hz
+                smw200a.set_power_level(cal_power)
                 smw200a.start_signal()
 
                 # Set parameters for TektronixMSO68B

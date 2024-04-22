@@ -84,7 +84,7 @@ if __name__ == "__main__":
     daq = DIOController("USB-6509")
     try:
         # Set RF and IF combination for all ports.
-        daq.set_all_ports_rf_if_values('RF3IF1')
+        daq.set_all_ports_rf_if_values('ALLOFF')
         # Update the digital output.
         daq.update_digital_output()
 
