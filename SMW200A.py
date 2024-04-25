@@ -32,13 +32,13 @@ class SMW200A:
 
 
 if __name__ == "__main__":
-    instrument_address = "TCPIP0::192.168.141.222::inst0::INSTR"  # Replace this with your instrument's IP address
+    instrument_address = "TCPIP0::192.168.1.222::inst0::INSTR"  # Replace this with your instrument's IP address
     vsg = SMW200A(instrument_address)
     vsg.identify()  # Print instrument identification
 
     # Example usage
     frequency = 1000000000  # Frequency in Hz
-    power_level = -10  # Power level in dBm
+    power_level = -20  # Power level in dBm
 
     vsg.set_frequency(frequency)
     vsg.set_power_level(power_level)
