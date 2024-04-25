@@ -1,3 +1,5 @@
+from datetime import time
+
 import pyvisa
 
 class TektronixMSO68B:
@@ -66,20 +68,32 @@ class TektronixMSO68B:
     def query(self, string):
         return(self.instrument.query(string))
 
+    def clipcheck(self, channels):
+
+        for channel in channels:  # cycle through all active channels
+
+            while int(self.instrument.query(f'ch{channel}:clipping?')):  # if clipping for selected channel is true
+                scale = float(self.instrument.query(f'ch{channel}:scale?'))  # check current scale for selected channel
+                new_scale = scale * 1.20  # increase vertical scale by 25%
+                print(f"Clipping detected, scale changed to {new_scale}")
+                for channel in channels:
+                    self.instrument.write(f'ch{channel}:scale {new_scale}')  # set new vertical scale
+                    self.instrument.query('*opc?')  # sync to make sure scale is changed before next query
+                time.sleep()
 
 if __name__ == "__main__":
-    visa_address = "TCPIP0::192.168.141.136::inst0::INSTR"  # Replace this with your instrument's VISA address
+    visa_address = "TCPIP0::192.168.1.103::inst0::INSTR"  # Replace this with your instrument's VISA address
     mso = TektronixMSO68B(visa_address)
     mso.write("*CLS")  # clear errors in the queue
 
     # Get information about the device
     instrument_info = mso.identify()
     print(f"Instrument Information: {instrument_info}")
-    mso.recall_setup("C:/Dwell.set")
+    # mso.recall_setup("C:/SpecAnTest.set")
+    channels_to_set_on = [1, 2]
 
     # Set Channels
     try:
-        channels_to_set_on = [1]
         mso.set_channels(channels=channels_to_set_on, state="ON")
         print(f"Channels {channels_to_set_on} set to ON.")
 
@@ -93,10 +107,11 @@ if __name__ == "__main__":
     print(f"Sample Rate set to: {sample_rate} samples/s")
 
     # Set record length to 1000 points
-    record_length = mso.set_record_length(100000)
+    record_length = mso.set_record_length(10000000)
     print(f"Record Length set to: {record_length} points")
 
     # Force trigger
+    mso.clipcheck(channels_to_set_on)
     mso.force_trigger()
     print("Trigger forced.")
     mso.query("*ESR?")  # Event status register value

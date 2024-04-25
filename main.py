@@ -196,11 +196,11 @@ def main():
             f"TCPIP0::{tektronix_config['TektronixMSO68B_1']['resource_address']}::inst0::INSTR")
         tektronix1.identify()
         tektronix1.write("*CLS")  # clear errors in the queue
-        tektronix1.recall_setup(tektronix_config['TektronixMSO68B_1']['settings_path'])
+        # tektronix1.recall_setup(tektronix_config['TektronixMSO68B_1']['settings_path'])
         tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
         tektronix2.identify()
         tektronix2.write("*CLS")  # clear errors in the queue
-        tektronix2.recall_setup(tektronix_config['TektronixMSO68B_2']['settings_path'])
+        # tektronix2.recall_setup(tektronix_config['TektronixMSO68B_2']['settings_path'])
 
     except Exception as e:
         logging.exception("An error occurred during initialization: %s", str(e))
@@ -248,6 +248,7 @@ def main():
                 tektronix1.set_channels(set_channels_1, "ON")
                 tektronix1.set_sample_rate(sample_rate_1)
                 tektronix1.set_record_length(record_length_1)
+                tektronix1.clipcheck(set_channels_1)
                 tektronix1.force_trigger()
                 tektronix1.query("*ESR?")  # Event status register value
                 print(tektronix1.query("ALLEV?"))  # All events, more descriptive for errors detected
@@ -255,6 +256,7 @@ def main():
                 tektronix2.set_channels(set_channels_2, "ON")
                 tektronix2.set_sample_rate(sample_rate_2)
                 tektronix2.set_record_length(record_length_2)
+                tektronix1.clipcheck(set_channels_2)
                 tektronix2.force_trigger()
                 tektronix2.query("*ESR?")  # Event status register value
                 print(tektronix2.query("ALLEV?"))  # All events, more descriptive for errors detected
