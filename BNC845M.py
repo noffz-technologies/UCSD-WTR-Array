@@ -58,7 +58,7 @@ class BNC845M:
 
 # Example usage:
 if __name__ == "__main__":
-    bnc = BNC845M(resource_name="TCPIP0::192.168.141.71::inst0::INSTR")
+    bnc = BNC845M(resource_name="TCPIP0::192.168.56.5::inst0::INSTR")
     bnc.identify()  # Print instrument identification
     bnc.set_frequency(frequency_hz=1e9)  # Set frequency to 1 GHz
     bnc.set_power_level(power_level=14)

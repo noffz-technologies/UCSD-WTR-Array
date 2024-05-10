@@ -32,7 +32,7 @@ class SMW200A:
 
 
 if __name__ == "__main__":
-    instrument_address = "TCPIP0::192.168.1.222::inst0::INSTR"  # Replace this with your instrument's IP address
+    instrument_address = "TCPIP0::192.168.56.3::inst0::INSTR"  # Replace this with your instrument's IP address
     vsg = SMW200A(instrument_address)
     vsg.identify()  # Print instrument identification
 

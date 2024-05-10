@@ -82,7 +82,7 @@ class TektronixMSO68B:
                 time.sleep()
 
 if __name__ == "__main__":
-    visa_address = "TCPIP0::192.168.1.103::inst0::INSTR"  # Replace this with your instrument's VISA address
+    visa_address = "TCPIP0::192.168.56.2::inst0::INSTR"  # Replace this with your instrument's VISA address
     mso = TektronixMSO68B(visa_address)
     mso.write("*CLS")  # clear errors in the queue
 

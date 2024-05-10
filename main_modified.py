@@ -181,12 +181,12 @@ def main():
         #       "")
 
         # Initialize BNC845M
-        bnc1 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_1']['resource_address']}::inst0::INSTR")
-        bnc1.identify()
-        bnc1.set_power_level(power_level=bnc845m_config['BNC845M_1']['power_level'])
-        bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
-        bnc2.identify()
-        bnc2.set_power_level(power_level=bnc845m_config['BNC845M_2']['power_level'])
+        # bnc1 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_1']['resource_address']}::inst0::INSTR")
+        # bnc1.identify()
+        # bnc1.set_power_level(power_level=bnc845m_config['BNC845M_1']['power_level'])
+        # bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
+        # bnc2.identify()
+        # bnc2.set_power_level(power_level=bnc845m_config['BNC845M_2']['power_level'])
 
         # Initialize DIOController
         dio = DIOController(dio_config['resource_name'])
@@ -197,10 +197,11 @@ def main():
         tektronix1.identify()
         tektronix1.write("*CLS")  # clear errors in the queue
         tektronix1.recall_setup(tektronix_config['TektronixMSO68B_1']['settings_path'])
-        tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
-        tektronix2.identify()
-        tektronix2.write("*CLS")  # clear errors in the queue
-        tektronix2.recall_setup(tektronix_config['TektronixMSO68B_2']['settings_path'])
+        #comment out the one we want to control manually
+        # tektronix2 = TektronixMSO68B(f"TCPIP0::{tektronix_config['TektronixMSO68B_2']['resource_address']}::inst0::INSTR")
+        # tektronix2.identify()
+        # tektronix2.write("*CLS")  # clear errors in the queue
+        # tektronix2.recall_setup(tektronix_config['TektronixMSO68B_2']['settings_path'])
 
     except Exception as e:
         logging.exception("An error occurred during initialization: %s", str(e))
@@ -222,10 +223,10 @@ def main():
 
                 # Set parameters for BNC845M
                 LO1, LO2, RFIF = set_instrument_parameters(dwell_center_freq)
-                bnc1.set_frequency(LO1 * 1e6)  # Convert MHz to Hz
-                bnc1.start_output()
-                bnc2.set_frequency(LO2 * 1e6)  # Convert MHz to Hz
-                bnc2.start_output()
+                # bnc1.set_frequency(LO1 * 1e6)  # Convert MHz to Hz
+                # bnc1.start_output()
+                # bnc2.set_frequency(LO2 * 1e6)  # Convert MHz to Hz
+                # bnc2.start_output()
 
                 # Set digital values
                 dio.set_all_ports_rf_if_values(RFIF)  # Set RF and IF combination for all ports.
@@ -253,13 +254,13 @@ def main():
                 tektronix1.query("*ESR?")  # Event status register value
                 print(tektronix1.query("ALLEV?"))  # All events, more descriptive for errors detected
 
-                tektronix2.set_channels(set_channels_2, "ON")
-                tektronix2.set_sample_rate(sample_rate_2)
-                tektronix2.set_record_length(record_length_2)
-                tektronix1.clipcheck(set_channels_2)
-                tektronix2.force_trigger()
-                tektronix2.query("*ESR?")  # Event status register value
-                print(tektronix2.query("ALLEV?"))  # All events, more descriptive for errors detected
+                # tektronix2.set_channels(set_channels_2, "ON")
+                # tektronix2.set_sample_rate(sample_rate_2)
+                # tektronix2.set_record_length(record_length_2)
+                # tektronix1.clipcheck(set_channels_2)
+                # tektronix2.force_trigger()
+                # tektronix2.query("*ESR?")  # Event status register value
+                # print(tektronix2.query("ALLEV?"))  # All events, more descriptive for errors detected
 
                 # Wait for dwell spacing
                 time.sleep(general_config['dwell_spacing'])
@@ -269,18 +270,18 @@ def main():
         # Shut down
         input("Switch off junction box switches from right to left. Press Enter to finish...")
         smw200a.stop_signal()
-        bnc1.stop_output()
-        bnc2.stop_output()
+        # bnc1.stop_output()
+        # bnc2.stop_output()
         dio.set_all_ports_rf_if_values("ALLOFF")
         dio.update_digital_output()
 
         # Cleanup
         smw200a.close()
-        bnc1.close()
-        bnc2.close()
+        # bnc1.close()
+        # bnc2.close()
         dio.close()
         tektronix1.close()
-        tektronix2.close()
+        # tektronix2.close()
         # ngp800.stop_output()  # Disable power
         # ngp800.close()
 
