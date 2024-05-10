@@ -63,6 +63,7 @@ def read_config():
     for section in config.sections():
         if section.startswith('Dwell_'):
             dwell = {}
+            dwell['repeat_count'] = config.getint(section, 'repeat_count')
             dwell['dwell_center_frequency'] = config.getint(section, 'dwell_center_frequency')
             dwell['cal_center_frequency'] = config.getint(section, 'cal_center_frequency')
             dwell['cal_power'] = config.getint(section, 'cal_power')
@@ -208,6 +209,7 @@ def main():
         try:
             # Main loop for dwells
             for dwell_name, dwell_config in dwells_config.items():
+                repeat_count = int(dwell_config['repeat_count'])
                 dwell_center_freq = dwell_config['dwell_center_frequency']
                 cal_center_freq = dwell_config['cal_center_frequency']
                 cal_power = dwell_config['cal_power']
@@ -244,25 +246,26 @@ def main():
                 smw200a.set_power_level(cal_power)
                 smw200a.start_signal()
 
-                # Set parameters for TektronixMSO68B
-                tektronix1.set_channels(set_channels_1, "ON")
-                tektronix1.set_sample_rate(sample_rate_1)
-                tektronix1.set_record_length(record_length_1)
-                tektronix1.clipcheck(set_channels_1)
-                tektronix1.force_trigger()
-                tektronix1.query("*ESR?")  # Event status register value
-                print(tektronix1.query("ALLEV?"))  # All events, more descriptive for errors detected
+                for _ in range(repeat_count):
+                    # Set parameters for TektronixMSO68B
+                    tektronix1.set_channels(set_channels_1, "ON")
+                    tektronix1.set_sample_rate(sample_rate_1)
+                    tektronix1.set_record_length(record_length_1)
+                    tektronix1.clipcheck(set_channels_1)
+                    tektronix1.force_trigger()
+                    tektronix1.query("*ESR?")  # Event status register value
+                    print(tektronix1.query("ALLEV?"))  # All events, more descriptive for errors detected
 
-                tektronix2.set_channels(set_channels_2, "ON")
-                tektronix2.set_sample_rate(sample_rate_2)
-                tektronix2.set_record_length(record_length_2)
-                tektronix1.clipcheck(set_channels_2)
-                tektronix2.force_trigger()
-                tektronix2.query("*ESR?")  # Event status register value
-                print(tektronix2.query("ALLEV?"))  # All events, more descriptive for errors detected
+                    tektronix2.set_channels(set_channels_2, "ON")
+                    tektronix2.set_sample_rate(sample_rate_2)
+                    tektronix2.set_record_length(record_length_2)
+                    tektronix1.clipcheck(set_channels_2)
+                    tektronix2.force_trigger()
+                    tektronix2.query("*ESR?")  # Event status register value
+                    print(tektronix2.query("ALLEV?"))  # All events, more descriptive for errors detected
 
-                # Wait for dwell spacing
-                time.sleep(general_config['dwell_spacing'])
+                    # Wait for dwell spacing
+                    time.sleep(general_config['dwell_spacing'])
         except Exception as e:
             logging.exception("An error occurred during initialization: %s", str(e))
     finally:
