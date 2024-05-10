@@ -14885,3 +14885,521 @@ pyvisa.errors.VisaIOError: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient loca
 2024-05-10 10:34:57,045 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is closed
 2024-05-10 10:34:57,045 - DEBUG - Closing ResourceManager (session: 1)
 2024-05-10 10:34:57,047 - DEBUG - viClose(1,) -> 0
+2024-05-10 10:36:48,610 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:36:48,610 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:36:48,613 - DEBUG - No user defined configuration
+2024-05-10 10:36:48,615 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:36:48,615 - DEBUG - No user defined library files
+2024-05-10 10:36:48,615 - DEBUG - The IVI implementation available
+2024-05-10 10:36:48,615 - DEBUG - No user defined configuration
+2024-05-10 10:36:48,617 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:36:48,617 - DEBUG - No user defined library files
+2024-05-10 10:36:48,621 - DEBUG - Library signatures: 90 ok, 0 failed
+2024-05-10 10:36:48,621 - DEBUG - Created library wrapper for C:\Windows\system32\visa32.dll
+2024-05-10 10:36:48,666 - DEBUG - viOpenDefaultRM('<ViObject object at 0x000002B44958D440>',) -> 0
+2024-05-10 10:36:48,667 - DEBUG - Created ResourceManager with session 1
+2024-05-10 10:36:48,667 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.3::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002B44A00AF40>, <ctypes.c_char_Array_256 object at 0x000002B44A00AAC0>, <ctypes.c_char_Array_256 object at 0x000002B44A00AC40>) -> 0
+2024-05-10 10:36:48,667 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - opening ...
+2024-05-10 10:36:48,673 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.3::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002B44958D440>') -> 0
+2024-05-10 10:36:48,673 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is open with session 2
+2024-05-10 10:36:48,673 - DEBUG - viWrite(2, b'*IDN?\r\n', 7, 'c_ulong(7)') -> 0
+2024-05-10 10:36:48,673 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:48,674 - DEBUG - viRead(2, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(56)') -> 0
+2024-05-10 10:36:48,727 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:36:48,727 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:36:48,727 - DEBUG - No user defined configuration
+2024-05-10 10:36:48,729 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:36:48,729 - DEBUG - No user defined library files
+2024-05-10 10:36:48,729 - DEBUG - The IVI implementation available
+2024-05-10 10:36:48,729 - DEBUG - No user defined configuration
+2024-05-10 10:36:48,731 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:36:48,731 - DEBUG - No user defined library files
+2024-05-10 10:36:48,731 - DEBUG - Reusing ResourceManager with session 1
+2024-05-10 10:36:48,731 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.1::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002B44A7E83C0>, <ctypes.c_char_Array_256 object at 0x000002B44A7E8440>, <ctypes.c_char_Array_256 object at 0x000002B44A7E84C0>) -> 0
+2024-05-10 10:36:48,732 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - opening ...
+2024-05-10 10:36:48,748 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.1::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002B44958D440>') -> 0
+2024-05-10 10:36:48,749 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is open with session 3
+2024-05-10 10:36:48,749 - DEBUG - viSetAttribute(3, 1073676314, 15000) -> 0
+2024-05-10 10:36:48,749 - DEBUG - viSetAttribute(3, <ResourceAttribute.termchar: 1073676312>, 10) -> 0
+2024-05-10 10:36:48,749 - DEBUG - viSetAttribute(3, <ResourceAttribute.termchar_enabled: 1073676344>, 1) -> 0
+2024-05-10 10:36:48,750 - DEBUG - viWrite(3, b'*IDN?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:36:48,750 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:48,754 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(50)') -> 0
+2024-05-10 10:36:48,755 - DEBUG - viWrite(3, b'*CLS', 4, 'c_ulong(4)') -> 0
+2024-05-10 10:36:48,756 - DEBUG - viWrite(3, b':RECAll:SETUp "E:/Dwell.set"', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:36:48,757 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:36:48,757 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,234 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,248 - DEBUG - viWrite(2, b'SOURce:FREQuency:FIXed 2880000000.0Hz\r\n', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:36:52,249 - DEBUG - viWrite(2, b'SOURce:POWer:LEVel:IMMediate:AMPLitude -20dBm\r\n', 47, 'c_ulong(47)') -> 0
+2024-05-10 10:36:52,250 - DEBUG - viWrite(2, b'OUTPut:STATe ON\r\n', 17, 'c_ulong(17)') -> 0
+2024-05-10 10:36:52,251 - DEBUG - viWrite(3, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:36:52,252 - DEBUG - viWrite(3, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,253 - DEBUG - viWrite(3, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,254 - DEBUG - viWrite(3, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,255 - DEBUG - viWrite(3, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,256 - DEBUG - viWrite(3, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,256 - DEBUG - viWrite(3, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,257 - DEBUG - viWrite(3, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:36:52,258 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:36:52,258 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,272 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,272 - DEBUG - viWrite(3, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:36:52,273 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:36:52,273 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,312 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,313 - DEBUG - viWrite(3, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:36:52,313 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,314 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(11)') -> 0
+2024-05-10 10:36:52,315 - DEBUG - viWrite(3, b':HORizontal:RECOrdlength 100000000', 34, 'c_ulong(34)') -> 0
+2024-05-10 10:36:52,316 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:36:52,316 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,345 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,345 - DEBUG - viWrite(3, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2024-05-10 10:36:52,346 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,346 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(10)') -> 0
+2024-05-10 10:36:52,347 - DEBUG - viWrite(3, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,347 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,348 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,349 - DEBUG - viWrite(3, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,349 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,352 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,353 - DEBUG - viWrite(3, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,353 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,355 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,356 - DEBUG - viWrite(3, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,356 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,359 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,360 - DEBUG - viWrite(3, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,360 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,363 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,364 - DEBUG - viWrite(3, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,364 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,367 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,368 - DEBUG - viWrite(3, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:36:52,368 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,371 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,372 - DEBUG - viWrite(3, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2024-05-10 10:36:52,373 - DEBUG - viWrite(3, b'*ESR?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:36:52,373 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,379 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:36:52,380 - DEBUG - viWrite(3, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2024-05-10 10:36:52,380 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:36:52,383 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(38)') -> 0
+2024-05-10 10:37:52,394 - DEBUG - viWrite(2, b'SOURce:FREQuency:FIXed 2880000000.0Hz\r\n', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:37:52,394 - DEBUG - viWrite(2, b'SOURce:POWer:LEVel:IMMediate:AMPLitude -20dBm\r\n', 47, 'c_ulong(47)') -> 0
+2024-05-10 10:37:52,395 - DEBUG - viWrite(2, b'OUTPut:STATe ON\r\n', 17, 'c_ulong(17)') -> 0
+2024-05-10 10:37:52,396 - DEBUG - viWrite(3, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:37:52,397 - DEBUG - viWrite(3, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,398 - DEBUG - viWrite(3, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,398 - DEBUG - viWrite(3, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,399 - DEBUG - viWrite(3, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,400 - DEBUG - viWrite(3, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,400 - DEBUG - viWrite(3, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,401 - DEBUG - viWrite(3, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:37:52,402 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:37:52,402 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:38:07,395 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000002B44958D440>, 20480, 'c_ulong(0)') -> -1073807339
+2024-05-10 10:38:07,395 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - exception while reading: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+Buffer content: bytearray(b'')
+2024-05-10 10:38:07,395 - ERROR - An error occurred during initialization: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+Traceback (most recent call last):
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\main_modified.py", line 249, in main
+    tektronix1.set_channels(set_channels_1, "ON")
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\TektronixMSO68B.py", line 49, in set_channels
+    self.instrument.query("*OPC?") #make sure operations are complete before continuing
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 647, in query
+    return self.read()
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 485, in read
+    message = self._read_raw().decode(enco)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 441, in _read_raw
+    chunk, status = self.visalib.read(self.session, size)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\functions.py", line 2336, in read
+    ret = library.viRead(session, buffer, count, byref(return_count))
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\highlevel.py", line 226, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 251, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+2024-05-10 10:43:47,615 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:43:47,615 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:43:47,618 - DEBUG - No user defined configuration
+2024-05-10 10:43:47,620 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:43:47,620 - DEBUG - No user defined library files
+2024-05-10 10:43:47,620 - DEBUG - The IVI implementation available
+2024-05-10 10:43:47,620 - DEBUG - No user defined configuration
+2024-05-10 10:43:47,621 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:43:47,622 - DEBUG - No user defined library files
+2024-05-10 10:43:47,625 - DEBUG - Library signatures: 90 ok, 0 failed
+2024-05-10 10:43:47,625 - DEBUG - Created library wrapper for C:\Windows\system32\visa32.dll
+2024-05-10 10:43:47,659 - DEBUG - viOpenDefaultRM('<ViObject object at 0x000001C1F71B53C0>',) -> 0
+2024-05-10 10:43:47,659 - DEBUG - Created ResourceManager with session 1
+2024-05-10 10:43:47,660 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.3::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000001C1F742AEC0>, <ctypes.c_char_Array_256 object at 0x000001C1F742AA40>, <ctypes.c_char_Array_256 object at 0x000001C1F742ABC0>) -> 0
+2024-05-10 10:43:47,660 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - opening ...
+2024-05-10 10:43:47,667 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.3::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000001C1F71B53C0>') -> 0
+2024-05-10 10:43:47,667 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is open with session 2
+2024-05-10 10:43:47,667 - DEBUG - viWrite(2, b'*IDN?\r\n', 7, 'c_ulong(7)') -> 0
+2024-05-10 10:43:47,668 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:43:47,668 - DEBUG - viRead(2, <ctypes.c_char_Array_20480 object at 0x000001C1F71B53C0>, 20480, 'c_ulong(56)') -> 0
+2024-05-10 10:43:47,668 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:43:47,668 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:43:47,668 - DEBUG - No user defined configuration
+2024-05-10 10:43:47,670 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:43:47,670 - DEBUG - No user defined library files
+2024-05-10 10:43:47,670 - DEBUG - The IVI implementation available
+2024-05-10 10:43:47,671 - DEBUG - No user defined configuration
+2024-05-10 10:43:47,672 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:43:47,672 - DEBUG - No user defined library files
+2024-05-10 10:43:47,672 - DEBUG - Reusing ResourceManager with session 1
+2024-05-10 10:43:47,672 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.4::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000001C1F742AA40>, <ctypes.c_char_Array_256 object at 0x000001C1F742AEC0>, <ctypes.c_char_Array_256 object at 0x000001C1F742AAC0>) -> 0
+2024-05-10 10:43:47,673 - DEBUG - TCPIP0::192.168.56.4::inst0::INSTR - opening ...
+2024-05-10 10:44:08,717 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.4::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000001C1F71B53C0>') -> 0
+2024-05-10 10:44:08,717 - DEBUG - TCPIP0::192.168.56.4::inst0::INSTR - is open with session 4
+2024-05-10 10:44:08,717 - DEBUG - viSetAttribute(4, 1073676314, 5000) -> 0
+2024-05-10 10:44:08,718 - DEBUG - viWrite(4, b'*IDN?\r\n', 7, 'c_ulong(7)') -> 0
+2024-05-10 10:44:08,718 - DEBUG - TCPIP0::192.168.56.4::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:44:08,719 - DEBUG - viRead(4, <ctypes.c_char_Array_20480 object at 0x000001C1F71B53C0>, 20480, 'c_ulong(69)') -> 0
+2024-05-10 10:44:08,767 - DEBUG - viWrite(4, b':POWer:LEVel 1\r\n', 16, 'c_ulong(16)') -> 0
+2024-05-10 10:44:08,767 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:44:08,767 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:44:08,767 - DEBUG - No user defined configuration
+2024-05-10 10:44:08,769 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:44:08,769 - DEBUG - No user defined library files
+2024-05-10 10:44:08,769 - DEBUG - The IVI implementation available
+2024-05-10 10:44:08,770 - DEBUG - No user defined configuration
+2024-05-10 10:44:08,771 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:44:08,772 - DEBUG - No user defined library files
+2024-05-10 10:44:08,772 - DEBUG - Reusing ResourceManager with session 1
+2024-05-10 10:44:08,772 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.5::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000001C1F742AEC0>, <ctypes.c_char_Array_256 object at 0x000001C1F742AA40>, <ctypes.c_char_Array_256 object at 0x000001C1F742ABC0>) -> 0
+2024-05-10 10:44:08,772 - DEBUG - TCPIP0::192.168.56.5::inst0::INSTR - opening ...
+2024-05-10 10:44:31,827 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.5::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000001C1F71B53C0>') -> -1073807343
+2024-05-10 10:44:31,827 - ERROR - An error occurred during initialization: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+Traceback (most recent call last):
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\main.py", line 187, in main
+    bnc2 = BNC845M(f"TCPIP0::{bnc845m_config['BNC845M_2']['resource_address']}::inst0::INSTR")
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\BNC845M.py", line 13, in __init__
+    self.instrument = self.rm.open_resource(resource_name)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 3292, in open_resource
+    res.open(access_mode, open_timeout)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\resource.py", line 281, in open
+    self.session, status = self._resource_manager.open_bare_resource(
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 3217, in open_bare_resource
+    return self.visalib.open(self.session, resource_name, access_mode, open_timeout)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\functions.py", line 1850, in open
+    ret = library.viOpen(
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\highlevel.py", line 226, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 251, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2024-05-10 10:45:51,104 - DEBUG - viWrite(2, b'OUTPut:STATe OFF\r\n', 18, 'c_ulong(18)') -> 0
+2024-05-10 10:45:51,118 - DEBUG - viWrite(4, b':OUTP OFF\r\n', 11, 'c_ulong(11)') -> 0
+2024-05-10 10:45:51,119 - DEBUG - Closing ResourceManager (session: 1)
+2024-05-10 10:45:51,119 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - closing
+2024-05-10 10:45:51,119 - DEBUG - viDisableEvent(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:45:51,119 - DEBUG - viDiscardEvents(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:45:51,121 - DEBUG - viClose(2,) -> 0
+2024-05-10 10:45:51,121 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is closed
+2024-05-10 10:45:51,121 - DEBUG - TCPIP0::192.168.56.4::inst0::INSTR - closing
+2024-05-10 10:45:51,121 - DEBUG - viDisableEvent(4, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:45:51,121 - DEBUG - viDiscardEvents(4, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:45:51,123 - DEBUG - viClose(4,) -> 0
+2024-05-10 10:45:51,123 - DEBUG - TCPIP0::192.168.56.4::inst0::INSTR - is closed
+2024-05-10 10:45:51,132 - DEBUG - viClose(1,) -> 0
+2024-05-10 10:46:02,396 - DEBUG - Closing ResourceManager (session: 1)
+2024-05-10 10:46:02,396 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - closing
+2024-05-10 10:46:02,396 - DEBUG - viDisableEvent(3, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:46:02,396 - DEBUG - viDiscardEvents(3, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:46:02,397 - DEBUG - viClose(3,) -> 0
+2024-05-10 10:46:02,398 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is closed
+2024-05-10 10:46:02,398 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - closing
+2024-05-10 10:46:02,398 - DEBUG - viDisableEvent(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:46:02,398 - DEBUG - viDiscardEvents(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:46:02,399 - DEBUG - viClose(2,) -> 0
+2024-05-10 10:46:02,399 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is closed
+2024-05-10 10:46:02,400 - DEBUG - viClose(1,) -> 0
+2024-05-10 10:46:02,906 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:46:02,906 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:46:02,910 - DEBUG - No user defined configuration
+2024-05-10 10:46:02,911 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:46:02,912 - DEBUG - No user defined library files
+2024-05-10 10:46:02,912 - DEBUG - The IVI implementation available
+2024-05-10 10:46:02,912 - DEBUG - No user defined configuration
+2024-05-10 10:46:02,913 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:46:02,914 - DEBUG - No user defined library files
+2024-05-10 10:46:02,917 - DEBUG - Library signatures: 90 ok, 0 failed
+2024-05-10 10:46:02,917 - DEBUG - Created library wrapper for C:\Windows\system32\visa32.dll
+2024-05-10 10:46:02,953 - DEBUG - viOpenDefaultRM('<ViObject object at 0x00000133CF8FD440>',) -> 0
+2024-05-10 10:46:02,953 - DEBUG - Created ResourceManager with session 1
+2024-05-10 10:46:02,954 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.3::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x00000133D037AF40>, <ctypes.c_char_Array_256 object at 0x00000133D037AAC0>, <ctypes.c_char_Array_256 object at 0x00000133D037AC40>) -> 0
+2024-05-10 10:46:02,954 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - opening ...
+2024-05-10 10:46:02,959 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.3::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x00000133CF8FD440>') -> 0
+2024-05-10 10:46:02,959 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is open with session 2
+2024-05-10 10:46:02,959 - DEBUG - viWrite(2, b'*IDN?\r\n', 7, 'c_ulong(7)') -> 0
+2024-05-10 10:46:02,960 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:02,960 - DEBUG - viRead(2, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(56)') -> 0
+2024-05-10 10:46:03,009 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:46:03,009 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:46:03,009 - DEBUG - No user defined configuration
+2024-05-10 10:46:03,011 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:46:03,011 - DEBUG - No user defined library files
+2024-05-10 10:46:03,011 - DEBUG - The IVI implementation available
+2024-05-10 10:46:03,011 - DEBUG - No user defined configuration
+2024-05-10 10:46:03,013 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:46:03,013 - DEBUG - No user defined library files
+2024-05-10 10:46:03,013 - DEBUG - Reusing ResourceManager with session 1
+2024-05-10 10:46:03,013 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.1::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x00000133D0C683C0>, <ctypes.c_char_Array_256 object at 0x00000133D0C68440>, <ctypes.c_char_Array_256 object at 0x00000133D0C684C0>) -> 0
+2024-05-10 10:46:03,013 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - opening ...
+2024-05-10 10:46:03,040 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.1::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x00000133CF8FD440>') -> 0
+2024-05-10 10:46:03,040 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is open with session 3
+2024-05-10 10:46:03,040 - DEBUG - viSetAttribute(3, 1073676314, 15000) -> 0
+2024-05-10 10:46:03,041 - DEBUG - viSetAttribute(3, <ResourceAttribute.termchar: 1073676312>, 10) -> 0
+2024-05-10 10:46:03,041 - DEBUG - viSetAttribute(3, <ResourceAttribute.termchar_enabled: 1073676344>, 1) -> 0
+2024-05-10 10:46:03,041 - DEBUG - viWrite(3, b'*IDN?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:46:03,041 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:03,051 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(50)') -> 0
+2024-05-10 10:46:03,052 - DEBUG - viWrite(3, b'*CLS', 4, 'c_ulong(4)') -> 0
+2024-05-10 10:46:03,053 - DEBUG - viWrite(3, b':RECAll:SETUp "E:/Dwell.set"', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:46:03,054 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:46:03,054 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,448 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,458 - DEBUG - viWrite(2, b'SOURce:FREQuency:FIXed 2880000000.0Hz\r\n', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:46:06,459 - DEBUG - viWrite(2, b'SOURce:POWer:LEVel:IMMediate:AMPLitude -20dBm\r\n', 47, 'c_ulong(47)') -> 0
+2024-05-10 10:46:06,460 - DEBUG - viWrite(2, b'OUTPut:STATe ON\r\n', 17, 'c_ulong(17)') -> 0
+2024-05-10 10:46:06,461 - DEBUG - viWrite(3, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:46:06,462 - DEBUG - viWrite(3, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,462 - DEBUG - viWrite(3, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,463 - DEBUG - viWrite(3, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,464 - DEBUG - viWrite(3, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,465 - DEBUG - viWrite(3, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,466 - DEBUG - viWrite(3, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,467 - DEBUG - viWrite(3, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:46:06,467 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:46:06,467 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,483 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,484 - DEBUG - viWrite(3, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:46:06,485 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:46:06,485 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,511 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,512 - DEBUG - viWrite(3, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:46:06,512 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,513 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(11)') -> 0
+2024-05-10 10:46:06,514 - DEBUG - viWrite(3, b':HORizontal:RECOrdlength 100000000', 34, 'c_ulong(34)') -> 0
+2024-05-10 10:46:06,515 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:46:06,515 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,540 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,541 - DEBUG - viWrite(3, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2024-05-10 10:46:06,541 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,543 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(10)') -> 0
+2024-05-10 10:46:06,544 - DEBUG - viWrite(3, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,544 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,546 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,547 - DEBUG - viWrite(3, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,547 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,548 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,549 - DEBUG - viWrite(3, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,549 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,551 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,552 - DEBUG - viWrite(3, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,553 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,555 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,556 - DEBUG - viWrite(3, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,556 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,559 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,560 - DEBUG - viWrite(3, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,560 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,561 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,562 - DEBUG - viWrite(3, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:46:06,562 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,565 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,565 - DEBUG - viWrite(3, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2024-05-10 10:46:06,566 - DEBUG - viWrite(3, b'*ESR?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:46:06,566 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,572 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:46:06,573 - DEBUG - viWrite(3, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2024-05-10 10:46:06,573 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:46:06,576 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(38)') -> 0
+2024-05-10 10:47:06,593 - DEBUG - viWrite(2, b'SOURce:FREQuency:FIXed 2880000000.0Hz\r\n', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:47:06,594 - DEBUG - viWrite(2, b'SOURce:POWer:LEVel:IMMediate:AMPLitude -20dBm\r\n', 47, 'c_ulong(47)') -> 0
+2024-05-10 10:47:06,594 - DEBUG - viWrite(2, b'OUTPut:STATe ON\r\n', 17, 'c_ulong(17)') -> 0
+2024-05-10 10:47:06,595 - DEBUG - viWrite(3, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:47:06,596 - DEBUG - viWrite(3, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,597 - DEBUG - viWrite(3, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,598 - DEBUG - viWrite(3, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,598 - DEBUG - viWrite(3, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,599 - DEBUG - viWrite(3, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,600 - DEBUG - viWrite(3, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,600 - DEBUG - viWrite(3, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:47:06,601 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:47:06,601 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:47:21,602 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000133CF8FD440>, 20480, 'c_ulong(0)') -> -1073807339
+2024-05-10 10:47:21,602 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - exception while reading: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+Buffer content: bytearray(b'')
+2024-05-10 10:47:21,602 - ERROR - An error occurred during initialization: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+Traceback (most recent call last):
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\main_modified.py", line 249, in main
+    tektronix1.set_channels(set_channels_1, "ON")
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\TektronixMSO68B.py", line 49, in set_channels
+    self.instrument.query("*OPC?") #make sure operations are complete before continuing
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 647, in query
+    return self.read()
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 485, in read
+    message = self._read_raw().decode(enco)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 441, in _read_raw
+    chunk, status = self.visalib.read(self.session, size)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\functions.py", line 2336, in read
+    ret = library.viRead(session, buffer, count, byref(return_count))
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\highlevel.py", line 226, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 251, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+2024-05-10 10:51:28,981 - DEBUG - viWrite(2, b'OUTPut:STATe OFF\r\n', 18, 'c_ulong(18)') -> 0
+2024-05-10 10:51:28,985 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - closing
+2024-05-10 10:51:28,986 - DEBUG - viDisableEvent(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:51:28,986 - DEBUG - viDiscardEvents(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:51:28,987 - DEBUG - viClose(2,) -> 0
+2024-05-10 10:51:28,987 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is closed
+2024-05-10 10:51:28,988 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - closing
+2024-05-10 10:51:28,988 - DEBUG - viDisableEvent(3, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:51:28,988 - DEBUG - viDiscardEvents(3, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:51:28,989 - DEBUG - viClose(3,) -> 0
+2024-05-10 10:51:28,989 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is closed
+2024-05-10 10:51:28,990 - DEBUG - Closing ResourceManager (session: 1)
+2024-05-10 10:51:28,997 - DEBUG - viClose(1,) -> 0
+2024-05-10 10:51:39,184 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:51:39,184 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:51:39,188 - DEBUG - No user defined configuration
+2024-05-10 10:51:39,190 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:51:39,190 - DEBUG - No user defined library files
+2024-05-10 10:51:39,190 - DEBUG - The IVI implementation available
+2024-05-10 10:51:39,190 - DEBUG - No user defined configuration
+2024-05-10 10:51:39,192 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:51:39,192 - DEBUG - No user defined library files
+2024-05-10 10:51:39,195 - DEBUG - Library signatures: 90 ok, 0 failed
+2024-05-10 10:51:39,195 - DEBUG - Created library wrapper for C:\Windows\system32\visa32.dll
+2024-05-10 10:51:39,232 - DEBUG - viOpenDefaultRM('<ViObject object at 0x000001A1D572D440>',) -> 0
+2024-05-10 10:51:39,232 - DEBUG - Created ResourceManager with session 1
+2024-05-10 10:51:39,233 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.3::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000001A1D61AAF40>, <ctypes.c_char_Array_256 object at 0x000001A1D61AAAC0>, <ctypes.c_char_Array_256 object at 0x000001A1D61AAC40>) -> 0
+2024-05-10 10:51:39,234 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - opening ...
+2024-05-10 10:51:39,238 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.3::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000001A1D572D440>') -> 0
+2024-05-10 10:51:39,239 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is open with session 2
+2024-05-10 10:51:39,239 - DEBUG - viWrite(2, b'*IDN?\r\n', 7, 'c_ulong(7)') -> 0
+2024-05-10 10:51:39,239 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:39,240 - DEBUG - viRead(2, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(56)') -> 0
+2024-05-10 10:51:39,285 - DEBUG - No visa library specified, trying to find alternatives.
+2024-05-10 10:51:39,285 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2024-05-10 10:51:39,285 - DEBUG - No user defined configuration
+2024-05-10 10:51:39,287 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:51:39,288 - DEBUG - No user defined library files
+2024-05-10 10:51:39,288 - DEBUG - The IVI implementation available
+2024-05-10 10:51:39,288 - DEBUG - No user defined configuration
+2024-05-10 10:51:39,290 - DEBUG - Automatically found library files: [None, 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa32.dll', 'C:\\Windows\\system32\\visa64.dll', 'C:\\Windows\\system32\\visa64.dll']
+2024-05-10 10:51:39,290 - DEBUG - No user defined library files
+2024-05-10 10:51:39,290 - DEBUG - Reusing ResourceManager with session 1
+2024-05-10 10:51:39,290 - DEBUG - viParseRsrcEx(1, 'TCPIP0::192.168.56.1::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000001A1D68F83C0>, <ctypes.c_char_Array_256 object at 0x000001A1D68F8440>, <ctypes.c_char_Array_256 object at 0x000001A1D68F84C0>) -> 0
+2024-05-10 10:51:39,290 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - opening ...
+2024-05-10 10:51:39,316 - DEBUG - viOpen(1, 'TCPIP0::192.168.56.1::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000001A1D572D440>') -> 0
+2024-05-10 10:51:39,316 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is open with session 3
+2024-05-10 10:51:39,317 - DEBUG - viSetAttribute(3, 1073676314, 15000) -> 0
+2024-05-10 10:51:39,317 - DEBUG - viSetAttribute(3, <ResourceAttribute.termchar: 1073676312>, 10) -> 0
+2024-05-10 10:51:39,317 - DEBUG - viSetAttribute(3, <ResourceAttribute.termchar_enabled: 1073676344>, 1) -> 0
+2024-05-10 10:51:39,318 - DEBUG - viWrite(3, b'*IDN?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:51:39,318 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:39,319 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(50)') -> 0
+2024-05-10 10:51:39,320 - DEBUG - viWrite(3, b'*CLS', 4, 'c_ulong(4)') -> 0
+2024-05-10 10:51:39,321 - DEBUG - viWrite(3, b':RECAll:SETUp "E:/Dwell.set"', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:51:39,321 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:51:39,322 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,728 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,741 - DEBUG - viWrite(2, b'SOURce:FREQuency:FIXed 2880000000.0Hz\r\n', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:51:42,741 - DEBUG - viWrite(2, b'SOURce:POWer:LEVel:IMMediate:AMPLitude -20dBm\r\n', 47, 'c_ulong(47)') -> 0
+2024-05-10 10:51:42,742 - DEBUG - viWrite(2, b'OUTPut:STATe ON\r\n', 17, 'c_ulong(17)') -> 0
+2024-05-10 10:51:42,743 - DEBUG - viWrite(3, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:51:42,744 - DEBUG - viWrite(3, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,744 - DEBUG - viWrite(3, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,745 - DEBUG - viWrite(3, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,746 - DEBUG - viWrite(3, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,747 - DEBUG - viWrite(3, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,748 - DEBUG - viWrite(3, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,749 - DEBUG - viWrite(3, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:51:42,749 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:51:42,749 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,766 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,767 - DEBUG - viWrite(3, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:51:42,768 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:51:42,768 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,793 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,795 - DEBUG - viWrite(3, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:51:42,795 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,797 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(11)') -> 0
+2024-05-10 10:51:42,798 - DEBUG - viWrite(3, b':HORizontal:RECOrdlength 100000000', 34, 'c_ulong(34)') -> 0
+2024-05-10 10:51:42,799 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:51:42,799 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,839 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,840 - DEBUG - viWrite(3, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2024-05-10 10:51:42,840 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,843 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(10)') -> 0
+2024-05-10 10:51:42,844 - DEBUG - viWrite(3, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,844 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,847 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,848 - DEBUG - viWrite(3, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,848 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,849 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,849 - DEBUG - viWrite(3, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,849 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,852 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,853 - DEBUG - viWrite(3, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,853 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,855 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,857 - DEBUG - viWrite(3, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,857 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,860 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,861 - DEBUG - viWrite(3, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,861 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,863 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,864 - DEBUG - viWrite(3, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2024-05-10 10:51:42,864 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,868 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,869 - DEBUG - viWrite(3, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2024-05-10 10:51:42,870 - DEBUG - viWrite(3, b'*ESR?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:51:42,870 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,878 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(2)') -> 0
+2024-05-10 10:51:42,879 - DEBUG - viWrite(3, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2024-05-10 10:51:42,879 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:51:42,882 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(38)') -> 0
+2024-05-10 10:52:42,897 - DEBUG - viWrite(2, b'SOURce:FREQuency:FIXed 2880000000.0Hz\r\n', 39, 'c_ulong(39)') -> 0
+2024-05-10 10:52:42,898 - DEBUG - viWrite(2, b'SOURce:POWer:LEVel:IMMediate:AMPLitude -20dBm\r\n', 47, 'c_ulong(47)') -> 0
+2024-05-10 10:52:42,898 - DEBUG - viWrite(2, b'OUTPut:STATe ON\r\n', 17, 'c_ulong(17)') -> 0
+2024-05-10 10:52:42,899 - DEBUG - viWrite(3, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2024-05-10 10:52:42,900 - DEBUG - viWrite(3, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,900 - DEBUG - viWrite(3, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,901 - DEBUG - viWrite(3, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,902 - DEBUG - viWrite(3, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,902 - DEBUG - viWrite(3, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,903 - DEBUG - viWrite(3, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,904 - DEBUG - viWrite(3, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2024-05-10 10:52:42,904 - DEBUG - viWrite(3, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2024-05-10 10:52:42,904 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2024-05-10 10:52:57,905 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x000001A1D572D440>, 20480, 'c_ulong(0)') -> -1073807339
+2024-05-10 10:52:57,906 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - exception while reading: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+Buffer content: bytearray(b'')
+2024-05-10 10:52:57,906 - ERROR - An error occurred during initialization: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+Traceback (most recent call last):
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\main_modified.py", line 249, in main
+    tektronix1.set_channels(set_channels_1, "ON")
+  File "C:\Users\kesse\PycharmProjects\UCSD-WTR-Array\TektronixMSO68B.py", line 49, in set_channels
+    self.instrument.query("*OPC?") #make sure operations are complete before continuing
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 647, in query
+    return self.read()
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 485, in read
+    message = self._read_raw().decode(enco)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\resources\messagebased.py", line 441, in _read_raw
+    chunk, status = self.visalib.read(self.session, size)
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\functions.py", line 2336, in read
+    ret = library.viRead(session, buffer, count, byref(return_count))
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\ctwrapper\highlevel.py", line 226, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+  File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 251, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
