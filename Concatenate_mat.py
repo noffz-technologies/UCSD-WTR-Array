@@ -16,14 +16,21 @@ def combine_mat_files(root_dir, filenames, output_name):
     # Initialize empty list to store combined data
     combined_data = []
 
+    # Initialize header information dictionary
+    header_info = {}
+
     # Construct full file paths
     full_filenames = [os.path.join(root_dir, f"{filename}.mat") for filename in filenames]
 
     # Iterate through filenames and accumulate data
     for filename in full_filenames:
         try:
-            data = np.transpose(loadmat(filename)["data"])  # Load "data" field
+            mat_contents = loadmat(filename)  # Load .mat file
+            data = np.transpose(mat_contents["data"])  # Load "data" field
             combined_data.append(data)
+            # Extract header information from the first file
+            if not header_info:
+                header_info = {key: value for key, value in mat_contents.items() if key != "data"}
         except KeyError:
             print(f"Warning: 'data' field not found in {filename}. Skipping.")
 
@@ -36,8 +43,8 @@ def combine_mat_files(root_dir, filenames, output_name):
     # Format the creation time as part of the output file name
     output_filename = f"{output_name}_{creation_time_str}.mat"
 
-    # Save the combined data to a new .mat file
-    savemat(os.path.join(root_dir, output_filename), {"data": np.vstack(combined_data)})
+    # Save the combined data and header information to a new .mat file
+    savemat(os.path.join(root_dir, output_filename), {"data": np.vstack(combined_data), **header_info})
     print(f"Combined data saved to: {os.path.join(root_dir, output_filename)}")
     print(np.vstack(combined_data))
 
@@ -46,7 +53,7 @@ def combine_mat_files(root_dir, filenames, output_name):
 filenames = [f"pos2_2.49GHz_ch{j}" for j in range(1, 9)]
 
 # Specify root directory (replace with your actual directory path)
-root_dir = r"C:\Users\uwtdemo\PycharmProjects\UCSD-WTR-Array\mat"
+root_dir = r"C:\Users\catnip\Downloads\pos2_2.49GHz"
 
 if __name__ == "__main__":
     # Combine data and save as a new .mat file
