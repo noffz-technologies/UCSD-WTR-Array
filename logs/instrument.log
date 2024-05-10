@@ -14872,3 +14872,16 @@ pyvisa.errors.VisaIOError: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient loca
 2024-05-10 10:22:34,737 - DEBUG - viWrite(3, b'ALLEV?', 6, 'c_ulong(6)') -> 0
 2024-05-10 10:22:34,738 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
 2024-05-10 10:22:34,740 - DEBUG - viRead(3, <ctypes.c_char_Array_20480 object at 0x00000243F1F5D440>, 20480, 'c_ulong(38)') -> 0
+2024-05-10 10:34:57,035 - DEBUG - viWrite(2, b'OUTPut:STATe OFF\r\n', 18, 'c_ulong(18)') -> 0
+2024-05-10 10:34:57,039 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - closing
+2024-05-10 10:34:57,040 - DEBUG - viDisableEvent(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:34:57,040 - DEBUG - viDiscardEvents(2, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:34:57,041 - DEBUG - viClose(2,) -> 0
+2024-05-10 10:34:57,041 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - is closed
+2024-05-10 10:34:57,043 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - closing
+2024-05-10 10:34:57,043 - DEBUG - viDisableEvent(3, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2024-05-10 10:34:57,043 - DEBUG - viDiscardEvents(3, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2024-05-10 10:34:57,045 - DEBUG - viClose(3,) -> 0
+2024-05-10 10:34:57,045 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - is closed
+2024-05-10 10:34:57,045 - DEBUG - Closing ResourceManager (session: 1)
+2024-05-10 10:34:57,047 - DEBUG - viClose(1,) -> 0
