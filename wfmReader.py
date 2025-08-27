@@ -101,7 +101,7 @@ def decode_header(header_bytes):
     return wfm_info
 
 if __name__ == "__main__":
-    target_file = r"C:\Users\catnip\Downloads\Tek001\Tek001_ch8.wfm"
+    target_file = r"C:\Users\catnip\Documents\GitHub\UCSD-WTR-Array\Test Files\Tek001_ch8.wfm"
 
     try:
         scaled_array, tstart, tscale, tfrac_array, tdatefrac_array, tdate_array = read_wfm(target_file)
@@ -115,7 +115,7 @@ if __name__ == "__main__":
             'tdatefrac_array': tdatefrac_array,
             'tdate_array': tdate_array
         }
-        io.savemat(r"C:\Users\catnip\Downloads\Tek001\Tek001_ch8.mat", mat_data)
+        io.savemat(r"C:\Users\catnip\Documents\GitHub\UCSD-WTR-Array\Test Files\Tek001_ch8.mat", mat_data)
 
         # Optional: Plotting example
         num_points = scaled_array.shape[0]

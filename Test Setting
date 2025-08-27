@@ -1,3 +1,5 @@
+#psuedocode describing initial project requirements
+
 tz = 'z';
 fmt = 'yyyymmddHHMMss.ss z';
 DT = datetime(2015,3,8,'TimeZone',tz,'Format',fmt) + hours(1:4)

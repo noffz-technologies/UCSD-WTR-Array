@@ -1,6 +1,6 @@
 from datetime import time
-
 import pyvisa
+
 
 class TektronixMSO68B:
     def __init__(self, visa_address):
@@ -81,8 +81,9 @@ class TektronixMSO68B:
                     self.instrument.query('*opc?')  # sync to make sure scale is changed before next query
                 time.sleep()
 
+
 if __name__ == "__main__":
-    visa_address = "TCPIP0::192.168.56.2::inst0::INSTR"  # Replace this with your instrument's VISA address
+    visa_address = "TCPIP0::192.168.141.134::inst0::INSTR"  # Replace this with your instrument's VISA address
     mso = TektronixMSO68B(visa_address)
     mso.write("*CLS")  # clear errors in the queue
 

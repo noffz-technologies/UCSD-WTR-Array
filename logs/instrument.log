@@ -15403,3 +15403,441 @@ Traceback (most recent call last):
   File "C:\Users\kesse\anaconda3\envs\UCSD\lib\site-packages\pyvisa\highlevel.py", line 251, in handle_return_value
     raise errors.VisaIOError(rv)
 pyvisa.errors.VisaIOError: VI_ERROR_TMO (-1073807339): Timeout expired before operation completed.
+2025-08-08 15:18:13,206 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 15:18:13,207 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 15:18:13,215 - DEBUG - No user defined configuration
+2025-08-08 15:18:13,219 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:18:13,219 - DEBUG - No user defined library files
+2025-08-08 15:18:13,219 - DEBUG - The IVI implementation available
+2025-08-08 15:18:13,220 - DEBUG - No user defined configuration
+2025-08-08 15:18:13,223 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:18:13,223 - DEBUG - No user defined library files
+2025-08-08 15:18:13,368 - DEBUG - Library signatures: 90 ok, 0 failed
+2025-08-08 15:18:13,368 - DEBUG - Created library wrapper for C:\WINDOWS\system32\visa32.dll
+2025-08-08 15:18:13,894 - DEBUG - viOpenDefaultRM('<ViObject object at 0x000002C4208128C0>',) -> 0
+2025-08-08 15:18:13,895 - DEBUG - Created ResourceManager with session 4097
+2025-08-08 15:18:13,895 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.1.100::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002C42126B9C0>, <ctypes.c_char_Array_256 object at 0x000002C42126BBC0>, <ctypes.c_char_Array_256 object at 0x000002C42126B140>) -> 0
+2025-08-08 15:18:13,895 - DEBUG - TCPIP0::192.168.1.100::inst0::INSTR - opening ...
+2025-08-08 15:18:15,912 - DEBUG - viOpen(4097, 'TCPIP0::192.168.1.100::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002C4208128C0>') -> -1073807343
+2025-08-08 15:18:15,912 - ERROR - Failed to initialize NGP800PowerSupply: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 15:18:15,912 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 15:18:15,912 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 15:18:15,913 - DEBUG - No user defined configuration
+2025-08-08 15:18:15,917 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:18:15,917 - DEBUG - No user defined library files
+2025-08-08 15:18:15,917 - DEBUG - The IVI implementation available
+2025-08-08 15:18:15,917 - DEBUG - No user defined configuration
+2025-08-08 15:18:15,921 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:18:15,922 - DEBUG - No user defined library files
+2025-08-08 15:18:15,922 - DEBUG - Reusing ResourceManager with session 4097
+2025-08-08 15:18:15,922 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.56.3::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002C42126B4C0>, <ctypes.c_char_Array_256 object at 0x000002C42126BBC0>, <ctypes.c_char_Array_256 object at 0x000002C42126BA40>) -> 0
+2025-08-08 15:18:15,922 - DEBUG - TCPIP0::192.168.56.3::inst0::INSTR - opening ...
+2025-08-08 15:18:17,936 - DEBUG - viOpen(4097, 'TCPIP0::192.168.56.3::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002C4208128C0>') -> -1073807343
+2025-08-08 15:18:17,936 - ERROR - Failed to initialize SMW200A: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 15:19:43,182 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 15:19:43,182 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 15:19:43,183 - DEBUG - No user defined configuration
+2025-08-08 15:19:43,186 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:43,187 - DEBUG - No user defined library files
+2025-08-08 15:19:43,187 - DEBUG - The IVI implementation available
+2025-08-08 15:19:43,204 - DEBUG - No user defined configuration
+2025-08-08 15:19:43,207 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:43,207 - DEBUG - No user defined library files
+2025-08-08 15:19:43,208 - DEBUG - Reusing ResourceManager with session 4097
+2025-08-08 15:19:43,208 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.56.4::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002C42126B7C0>, <ctypes.c_char_Array_256 object at 0x000002C42126BBC0>, <ctypes.c_char_Array_256 object at 0x000002C42126B9C0>) -> 0
+2025-08-08 15:19:43,209 - DEBUG - TCPIP0::192.168.56.4::inst0::INSTR - opening ...
+2025-08-08 15:19:45,217 - DEBUG - viOpen(4097, 'TCPIP0::192.168.56.4::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002C4208128C0>') -> -1073807343
+2025-08-08 15:19:45,217 - ERROR - Failed to initialize BNC845M_1: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 15:19:45,217 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 15:19:45,219 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 15:19:45,219 - DEBUG - No user defined configuration
+2025-08-08 15:19:45,234 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:45,235 - DEBUG - No user defined library files
+2025-08-08 15:19:45,235 - DEBUG - The IVI implementation available
+2025-08-08 15:19:45,236 - DEBUG - No user defined configuration
+2025-08-08 15:19:45,243 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:45,244 - DEBUG - No user defined library files
+2025-08-08 15:19:45,244 - DEBUG - Reusing ResourceManager with session 4097
+2025-08-08 15:19:45,244 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.56.5::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002C42126B140>, <ctypes.c_char_Array_256 object at 0x000002C42126BBC0>, <ctypes.c_char_Array_256 object at 0x000002C42126B4C0>) -> 0
+2025-08-08 15:19:45,245 - DEBUG - TCPIP0::192.168.56.5::inst0::INSTR - opening ...
+2025-08-08 15:19:47,257 - DEBUG - viOpen(4097, 'TCPIP0::192.168.56.5::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002C4208128C0>') -> -1073807343
+2025-08-08 15:19:47,257 - ERROR - Failed to initialize BNC845M_2: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 15:19:47,273 - DEBUG - Closing ResourceManager (session: 4097)
+2025-08-08 15:19:47,279 - DEBUG - viClose(4097,) -> 0
+2025-08-08 15:19:47,279 - ERROR - Failed to initialize DIOController: Could not find an installation of NI-DAQmx. Please ensure that NI-DAQmx is installed on this machine or contact National Instruments for support.
+2025-08-08 15:19:47,280 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 15:19:47,280 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 15:19:47,280 - DEBUG - No user defined configuration
+2025-08-08 15:19:47,284 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:47,285 - DEBUG - No user defined library files
+2025-08-08 15:19:47,285 - DEBUG - The IVI implementation available
+2025-08-08 15:19:47,285 - DEBUG - No user defined configuration
+2025-08-08 15:19:47,290 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:47,290 - DEBUG - No user defined library files
+2025-08-08 15:19:47,291 - DEBUG - Library signatures: 90 ok, 0 failed
+2025-08-08 15:19:47,291 - DEBUG - Created library wrapper for C:\WINDOWS\system32\visa32.dll
+2025-08-08 15:19:47,301 - DEBUG - viOpenDefaultRM('<ViObject object at 0x000002C4208128C0>',) -> 0
+2025-08-08 15:19:47,301 - DEBUG - Created ResourceManager with session 4097
+2025-08-08 15:19:47,301 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.56.1::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002C421810C40>, <ctypes.c_char_Array_256 object at 0x000002C421810B40>, <ctypes.c_char_Array_256 object at 0x000002C421810CC0>) -> 0
+2025-08-08 15:19:47,301 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - opening ...
+2025-08-08 15:19:49,320 - DEBUG - viOpen(4097, 'TCPIP0::192.168.56.1::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002C4208128C0>') -> -1073807343
+2025-08-08 15:19:49,320 - ERROR - Failed to initialize TektronixMSO68B_1: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 15:19:49,320 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 15:19:49,320 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 15:19:49,321 - DEBUG - No user defined configuration
+2025-08-08 15:19:49,332 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:49,333 - DEBUG - No user defined library files
+2025-08-08 15:19:49,333 - DEBUG - The IVI implementation available
+2025-08-08 15:19:49,333 - DEBUG - No user defined configuration
+2025-08-08 15:19:49,342 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 15:19:49,343 - DEBUG - No user defined library files
+2025-08-08 15:19:49,343 - DEBUG - Reusing ResourceManager with session 4097
+2025-08-08 15:19:49,343 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.56.2::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002C421810DC0>, <ctypes.c_char_Array_256 object at 0x000002C421810B40>, <ctypes.c_char_Array_256 object at 0x000002C421810D40>) -> 0
+2025-08-08 15:19:49,344 - DEBUG - TCPIP0::192.168.56.2::inst0::INSTR - opening ...
+2025-08-08 15:19:51,349 - DEBUG - viOpen(4097, 'TCPIP0::192.168.56.2::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002C4208128C0>') -> -1073807343
+2025-08-08 15:19:51,350 - ERROR - Failed to initialize TektronixMSO68B_2: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 15:19:51,350 - INFO - --- Starting Dwell_1 (x3 repeats) ---
+2025-08-08 15:19:51,350 - INFO - Starting repeat 1/3...
+2025-08-08 15:20:51,352 - INFO - Starting repeat 2/3...
+2025-08-08 15:21:51,363 - INFO - Starting repeat 3/3...
+2025-08-08 15:22:51,365 - INFO - --- Shutting Down ---
+2025-08-08 15:22:51,365 - INFO - Cleanup complete. Program finished.
+2025-08-08 15:22:51,366 - DEBUG - Closing ResourceManager (session: 4097)
+2025-08-08 15:22:51,370 - DEBUG - viClose(4097,) -> 0
+2025-08-08 16:09:50,032 - WARNING - [SKIP] NGP800PowerSupply section not found in config.
+2025-08-08 16:09:50,032 - WARNING - [SKIP] SMW200A section not found in config.
+2025-08-08 16:09:55,591 - WARNING - [SKIP] BNC845M_1 section not found in config.
+2025-08-08 16:09:55,592 - WARNING - [SKIP] BNC845M_2 section not found in config.
+2025-08-08 16:09:55,592 - WARNING - [SKIP] DIOController section not found in config.
+2025-08-08 16:09:55,592 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 16:09:55,592 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 16:09:55,598 - DEBUG - No user defined configuration
+2025-08-08 16:09:55,602 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 16:09:55,602 - DEBUG - No user defined library files
+2025-08-08 16:09:55,602 - DEBUG - The IVI implementation available
+2025-08-08 16:09:55,602 - DEBUG - No user defined configuration
+2025-08-08 16:09:55,606 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 16:09:55,606 - DEBUG - No user defined library files
+2025-08-08 16:09:55,609 - DEBUG - Library signatures: 90 ok, 0 failed
+2025-08-08 16:09:55,610 - DEBUG - Created library wrapper for C:\WINDOWS\system32\visa32.dll
+2025-08-08 16:09:55,662 - DEBUG - viOpenDefaultRM('<ViObject object at 0x0000020F8E7C29C0>',) -> 0
+2025-08-08 16:09:55,662 - DEBUG - Created ResourceManager with session 4097
+2025-08-08 16:09:55,662 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.56.1::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x0000020F8F20BC40>, <ctypes.c_char_Array_256 object at 0x0000020F8F20B6C0>, <ctypes.c_char_Array_256 object at 0x0000020F8F20B740>) -> 0
+2025-08-08 16:09:55,663 - DEBUG - TCPIP0::192.168.56.1::inst0::INSTR - opening ...
+2025-08-08 16:09:57,678 - DEBUG - viOpen(4097, 'TCPIP0::192.168.56.1::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x0000020F8E7C29C0>') -> -1073807343
+2025-08-08 16:09:57,678 - ERROR - Failed to initialize TektronixMSO68B_1: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.
+2025-08-08 16:09:57,679 - WARNING - [SKIP] TektronixMSO68B_2 section not found in config.
+2025-08-08 16:09:57,679 - INFO - --- Starting Dwell_1 (x3 repeats) ---
+2025-08-08 16:09:57,679 - INFO - Starting repeat 1/3...
+2025-08-08 16:10:57,693 - INFO - Starting repeat 2/3...
+2025-08-08 16:11:57,704 - INFO - Starting repeat 3/3...
+2025-08-08 16:12:57,712 - INFO - --- Shutting Down ---
+2025-08-08 16:13:01,550 - INFO - Cleanup complete. Program finished.
+2025-08-08 16:13:01,550 - DEBUG - Closing ResourceManager (session: 4097)
+2025-08-08 16:13:01,556 - DEBUG - viClose(4097,) -> 0
+2025-08-08 16:24:18,322 - WARNING - [SKIP] NGP800PowerSupply section not found in config.
+2025-08-08 16:24:18,323 - WARNING - [SKIP] SMW200A section not found in config.
+2025-08-08 16:24:20,923 - WARNING - [SKIP] BNC845M_1 section not found in config.
+2025-08-08 16:24:20,924 - WARNING - [SKIP] BNC845M_2 section not found in config.
+2025-08-08 16:24:20,924 - WARNING - [SKIP] DIOController section not found in config.
+2025-08-08 16:24:20,924 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 16:24:20,924 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 16:24:20,930 - DEBUG - No user defined configuration
+2025-08-08 16:24:20,934 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 16:24:20,935 - DEBUG - No user defined library files
+2025-08-08 16:24:20,935 - DEBUG - The IVI implementation available
+2025-08-08 16:24:20,935 - DEBUG - No user defined configuration
+2025-08-08 16:24:20,940 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 16:24:20,940 - DEBUG - No user defined library files
+2025-08-08 16:24:20,943 - DEBUG - Library signatures: 90 ok, 0 failed
+2025-08-08 16:24:20,944 - DEBUG - Created library wrapper for C:\WINDOWS\system32\visa32.dll
+2025-08-08 16:24:20,989 - DEBUG - viOpenDefaultRM('<ViObject object at 0x000002B5FC6A2A40>',) -> 0
+2025-08-08 16:24:20,990 - DEBUG - Created ResourceManager with session 4097
+2025-08-08 16:24:20,990 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.141.134::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x000002B5FD0EBCC0>, <ctypes.c_char_Array_256 object at 0x000002B5FD0EB740>, <ctypes.c_char_Array_256 object at 0x000002B5FD0EB7C0>) -> 0
+2025-08-08 16:24:20,990 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - opening ...
+2025-08-08 16:24:20,997 - DEBUG - viOpen(4097, 'TCPIP0::192.168.141.134::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x000002B5FC6A2A40>') -> 0
+2025-08-08 16:24:20,997 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - is open with session 1
+2025-08-08 16:24:20,997 - DEBUG - viSetAttribute(1, 1073676314, 15000) -> 0
+2025-08-08 16:24:20,997 - DEBUG - viSetAttribute(1, <ResourceAttribute.termchar: 1073676312>, 10) -> 0
+2025-08-08 16:24:20,998 - DEBUG - viSetAttribute(1, <ResourceAttribute.termchar_enabled: 1073676344>, 1) -> 0
+2025-08-08 16:24:20,998 - DEBUG - viWrite(1, b':RECAll:SETUp "E:/Dwell.set"', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:24:20,999 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:24:20,999 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,012 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,013 - DEBUG - viWrite(1, b'*IDN?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:24:21,013 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,014 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(50)') -> 0
+2025-08-08 16:24:21,014 - INFO - [OK] TektronixMSO68B_1 initialized: TEKTRONIX,MSO68B,C062654,CF:91.1CT FV:2.6.38.1348
+2025-08-08 16:24:21,014 - WARNING - [SKIP] TektronixMSO68B_2 section not found in config.
+2025-08-08 16:24:21,014 - INFO - --- Starting Dwell_1 (x3 repeats) ---
+2025-08-08 16:24:21,014 - INFO - Starting repeat 1/3...
+2025-08-08 16:24:21,015 - DEBUG - viWrite(1, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:24:21,016 - DEBUG - viWrite(1, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,016 - DEBUG - viWrite(1, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,017 - DEBUG - viWrite(1, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,017 - DEBUG - viWrite(1, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,018 - DEBUG - viWrite(1, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,019 - DEBUG - viWrite(1, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,019 - DEBUG - viWrite(1, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:24:21,020 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:24:21,020 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,238 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,239 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2025-08-08 16:24:21,240 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:24:21,241 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,284 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,286 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:24:21,286 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,288 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(11)') -> 0
+2025-08-08 16:24:21,289 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength 100100000000', 37, 'c_ulong(37)') -> 0
+2025-08-08 16:24:21,290 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:24:21,290 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,353 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,355 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2025-08-08 16:24:21,355 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,357 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(10)') -> 0
+2025-08-08 16:24:21,357 - DEBUG - viWrite(1, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,357 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,359 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,360 - DEBUG - viWrite(1, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,360 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,363 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,364 - DEBUG - viWrite(1, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,364 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,366 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,367 - DEBUG - viWrite(1, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,367 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,369 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,370 - DEBUG - viWrite(1, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,370 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,372 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,373 - DEBUG - viWrite(1, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,373 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,376 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,377 - DEBUG - viWrite(1, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:24:21,377 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,379 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:24:21,380 - DEBUG - viWrite(1, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2025-08-08 16:24:21,380 - INFO - Tektronix1 triggered.
+2025-08-08 16:24:21,381 - DEBUG - viWrite(1, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2025-08-08 16:24:21,381 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:24:21,381 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(51)') -> 0
+2025-08-08 16:24:21,381 - DEBUG - Tektronix1 Events: 1,"No events to report - new events pending *ESR?"
+2025-08-08 16:25:21,392 - INFO - Starting repeat 2/3...
+2025-08-08 16:25:21,394 - DEBUG - viWrite(1, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:25:21,395 - DEBUG - viWrite(1, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,396 - DEBUG - viWrite(1, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,397 - DEBUG - viWrite(1, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,398 - DEBUG - viWrite(1, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,398 - DEBUG - viWrite(1, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,399 - DEBUG - viWrite(1, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,400 - DEBUG - viWrite(1, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:25:21,400 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:25:21,401 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,414 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,415 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2025-08-08 16:25:21,415 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:25:21,415 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,445 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,447 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:25:21,447 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,448 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(11)') -> 0
+2025-08-08 16:25:21,448 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength 100100000000', 37, 'c_ulong(37)') -> 0
+2025-08-08 16:25:21,449 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:25:21,449 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,482 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,483 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2025-08-08 16:25:21,483 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,485 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(10)') -> 0
+2025-08-08 16:25:21,485 - DEBUG - viWrite(1, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,485 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,486 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,487 - DEBUG - viWrite(1, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,487 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,488 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,488 - DEBUG - viWrite(1, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,488 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,488 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,489 - DEBUG - viWrite(1, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,489 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,490 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,490 - DEBUG - viWrite(1, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,491 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,493 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,493 - DEBUG - viWrite(1, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,493 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,494 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,494 - DEBUG - viWrite(1, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:25:21,494 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,497 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:25:21,498 - DEBUG - viWrite(1, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2025-08-08 16:25:21,498 - INFO - Tektronix1 triggered.
+2025-08-08 16:25:21,499 - DEBUG - viWrite(1, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2025-08-08 16:25:21,499 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:25:21,501 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(51)') -> 0
+2025-08-08 16:25:21,501 - DEBUG - Tektronix1 Events: 1,"No events to report - new events pending *ESR?"
+2025-08-08 16:26:21,509 - INFO - Starting repeat 3/3...
+2025-08-08 16:26:21,510 - DEBUG - viWrite(1, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:26:21,511 - DEBUG - viWrite(1, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,512 - DEBUG - viWrite(1, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,513 - DEBUG - viWrite(1, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,514 - DEBUG - viWrite(1, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,514 - DEBUG - viWrite(1, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,515 - DEBUG - viWrite(1, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,515 - DEBUG - viWrite(1, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:26:21,516 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:26:21,516 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,528 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,529 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2025-08-08 16:26:21,530 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:26:21,530 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,559 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,559 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:26:21,559 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,561 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(11)') -> 0
+2025-08-08 16:26:21,563 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength 100100000000', 37, 'c_ulong(37)') -> 0
+2025-08-08 16:26:21,564 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:26:21,564 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,593 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,594 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2025-08-08 16:26:21,594 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,595 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(10)') -> 0
+2025-08-08 16:26:21,597 - DEBUG - viWrite(1, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,597 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,598 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,600 - DEBUG - viWrite(1, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,600 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,602 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,602 - DEBUG - viWrite(1, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,602 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,605 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,605 - DEBUG - viWrite(1, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,605 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,608 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,609 - DEBUG - viWrite(1, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,609 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,610 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,611 - DEBUG - viWrite(1, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,611 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,612 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,612 - DEBUG - viWrite(1, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:26:21,612 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,615 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:26:21,615 - DEBUG - viWrite(1, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2025-08-08 16:26:21,616 - INFO - Tektronix1 triggered.
+2025-08-08 16:26:21,616 - DEBUG - viWrite(1, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2025-08-08 16:26:21,616 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:26:21,618 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x000002B5FC6A2A40>, 20480, 'c_ulong(51)') -> 0
+2025-08-08 16:26:21,618 - DEBUG - Tektronix1 Events: 1,"No events to report - new events pending *ESR?"
+2025-08-08 16:27:21,629 - INFO - --- Shutting Down ---
+2025-08-08 16:27:27,712 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - closing
+2025-08-08 16:27:27,712 - DEBUG - viDisableEvent(1, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2025-08-08 16:27:27,713 - DEBUG - viDiscardEvents(1, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2025-08-08 16:27:27,714 - DEBUG - viClose(1,) -> 0
+2025-08-08 16:27:27,714 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - is closed
+2025-08-08 16:27:27,714 - INFO - Cleanup complete. Program finished.
+2025-08-08 16:27:27,715 - DEBUG - Closing ResourceManager (session: 4097)
+2025-08-08 16:27:27,718 - DEBUG - viClose(4097,) -> 0
+2025-08-08 16:30:30,597 - WARNING - [SKIP] NGP800PowerSupply section not found in config.
+2025-08-08 16:30:30,597 - WARNING - [SKIP] SMW200A section not found in config.
+2025-08-08 16:30:30,598 - WARNING - [SKIP] BNC845M_1 section not found in config.
+2025-08-08 16:30:30,598 - WARNING - [SKIP] BNC845M_2 section not found in config.
+2025-08-08 16:30:30,598 - WARNING - [SKIP] DIOController section not found in config.
+2025-08-08 16:30:30,598 - DEBUG - No visa library specified, trying to find alternatives.
+2025-08-08 16:30:30,598 - DEBUG - Environment variable PYVISA_LIBRARY is unset.
+2025-08-08 16:30:30,603 - DEBUG - No user defined configuration
+2025-08-08 16:30:30,607 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 16:30:30,608 - DEBUG - No user defined library files
+2025-08-08 16:30:30,608 - DEBUG - The IVI implementation available
+2025-08-08 16:30:30,608 - DEBUG - No user defined configuration
+2025-08-08 16:30:30,611 - DEBUG - Automatically found library files: [None, 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa32.dll', 'C:\\WINDOWS\\system32\\visa64.dll', 'C:\\WINDOWS\\system32\\visa64.dll']
+2025-08-08 16:30:30,611 - DEBUG - No user defined library files
+2025-08-08 16:30:30,614 - DEBUG - Library signatures: 90 ok, 0 failed
+2025-08-08 16:30:30,615 - DEBUG - Created library wrapper for C:\WINDOWS\system32\visa32.dll
+2025-08-08 16:30:30,649 - DEBUG - viOpenDefaultRM('<ViObject object at 0x00000186D99D6A40>',) -> 0
+2025-08-08 16:30:30,650 - DEBUG - Created ResourceManager with session 4097
+2025-08-08 16:30:30,650 - DEBUG - viParseRsrcEx(4097, 'TCPIP0::192.168.141.134::inst0::INSTR', 'c_ushort(6)', 'c_ushort(0)', <ctypes.c_char_Array_256 object at 0x00000186DA41BCC0>, <ctypes.c_char_Array_256 object at 0x00000186DA41B740>, <ctypes.c_char_Array_256 object at 0x00000186DA41B7C0>) -> 0
+2025-08-08 16:30:30,650 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - opening ...
+2025-08-08 16:30:30,656 - DEBUG - viOpen(4097, 'TCPIP0::192.168.141.134::inst0::INSTR', <AccessModes.no_lock: 0>, 0, '<ViObject object at 0x00000186D99D6A40>') -> 0
+2025-08-08 16:30:30,656 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - is open with session 1
+2025-08-08 16:30:30,656 - DEBUG - viSetAttribute(1, 1073676314, 15000) -> 0
+2025-08-08 16:30:30,656 - DEBUG - viSetAttribute(1, <ResourceAttribute.termchar: 1073676312>, 10) -> 0
+2025-08-08 16:30:30,657 - DEBUG - viSetAttribute(1, <ResourceAttribute.termchar_enabled: 1073676344>, 1) -> 0
+2025-08-08 16:30:30,657 - DEBUG - viWrite(1, b':RECAll:SETUp "E:/Dwell.set"', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:30:30,658 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:30:30,658 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,670 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,671 - DEBUG - viWrite(1, b'*IDN?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:30:30,671 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,674 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(50)') -> 0
+2025-08-08 16:30:30,674 - INFO - [OK] TektronixMSO68B_1 initialized: TEKTRONIX,MSO68B,C062654,CF:91.1CT FV:2.6.38.1348
+2025-08-08 16:30:30,674 - WARNING - [SKIP] TektronixMSO68B_2 section not found in config.
+2025-08-08 16:30:30,674 - INFO - --- Starting Dwell_1 (x1 repeats) ---
+2025-08-08 16:30:30,674 - INFO - Starting repeat 1/1...
+2025-08-08 16:30:30,674 - DEBUG - viWrite(1, b'DISplay:GLObal:CH1:STATE OFF', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:30:30,675 - DEBUG - viWrite(1, b'DISplay:GLObal:CH2:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,676 - DEBUG - viWrite(1, b'DISplay:GLObal:CH3:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,677 - DEBUG - viWrite(1, b'DISplay:GLObal:CH4:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,677 - DEBUG - viWrite(1, b'DISplay:GLObal:CH5:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,677 - DEBUG - viWrite(1, b'DISplay:GLObal:CH6:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,678 - DEBUG - viWrite(1, b'DISplay:GLObal:CH7:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,679 - DEBUG - viWrite(1, b'DISplay:GLObal:CH8:STATE ON', 27, 'c_ulong(27)') -> 0
+2025-08-08 16:30:30,679 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:30:30,679 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,702 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,703 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate 12500000000', 39, 'c_ulong(39)') -> 0
+2025-08-08 16:30:30,704 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:30:30,704 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,736 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,736 - DEBUG - viWrite(1, b':HORizontal:MODE:SAMPLERate?', 28, 'c_ulong(28)') -> 0
+2025-08-08 16:30:30,737 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,739 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(11)') -> 0
+2025-08-08 16:30:30,739 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength 10000000', 33, 'c_ulong(33)') -> 0
+2025-08-08 16:30:30,740 - DEBUG - viWrite(1, b'*OPC?', 5, 'c_ulong(5)') -> 0
+2025-08-08 16:30:30,740 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,795 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,796 - DEBUG - viWrite(1, b':HORizontal:RECOrdlength?', 25, 'c_ulong(25)') -> 0
+2025-08-08 16:30:30,796 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,797 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(9)') -> 0
+2025-08-08 16:30:30,797 - DEBUG - viWrite(1, b'ch2:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,797 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,799 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,800 - DEBUG - viWrite(1, b'ch3:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,800 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,803 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,804 - DEBUG - viWrite(1, b'ch4:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,804 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,806 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,807 - DEBUG - viWrite(1, b'ch5:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,807 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,810 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,810 - DEBUG - viWrite(1, b'ch6:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,810 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,812 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,812 - DEBUG - viWrite(1, b'ch7:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,813 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,814 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,816 - DEBUG - viWrite(1, b'ch8:clipping?', 13, 'c_ulong(13)') -> 0
+2025-08-08 16:30:30,816 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,817 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(2)') -> 0
+2025-08-08 16:30:30,817 - DEBUG - viWrite(1, b'FPANEL:PRESS FORCETRIG', 22, 'c_ulong(22)') -> 0
+2025-08-08 16:30:30,817 - INFO - Tektronix1 triggered.
+2025-08-08 16:30:30,818 - DEBUG - viWrite(1, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2025-08-08 16:30:30,818 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,818 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(51)') -> 0
+2025-08-08 16:30:30,818 - DEBUG - Tektronix1 Events: 1,"No events to report - new events pending *ESR?"
+2025-08-08 16:30:30,819 - DEBUG - viWrite(1, b'ALLEV?', 6, 'c_ulong(6)') -> 0
+2025-08-08 16:30:30,819 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - reading 20480 bytes (last status <StatusCode.success_max_count_read: 1073676294>)
+2025-08-08 16:30:30,819 - DEBUG - viRead(1, <ctypes.c_char_Array_20480 object at 0x00000186D99D6A40>, 20480, 'c_ulong(51)') -> 0
+2025-08-08 16:31:30,831 - INFO - --- Shutting Down ---
+2025-08-08 17:23:51,387 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - closing
+2025-08-08 17:23:51,389 - DEBUG - viDisableEvent(1, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676291
+2025-08-08 17:23:51,389 - DEBUG - viDiscardEvents(1, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> 1073676292
+2025-08-08 17:23:51,391 - DEBUG - viClose(1,) -> -1073807338
+2025-08-08 17:23:51,456 - DEBUG - Closing ResourceManager (session: 4097)
+2025-08-08 17:23:51,456 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - closing
+2025-08-08 17:23:51,456 - DEBUG - viDisableEvent(1, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> -1073807346
+2025-08-08 17:23:51,483 - DEBUG - TCPIP0::192.168.141.134::inst0::INSTR - closing
+2025-08-08 17:23:51,484 - DEBUG - viDisableEvent(1, <EventType.all_enabled: 1073709055>, <EventMechanism.all: 65535>) -> -1073807346
+2025-08-08 17:23:51,490 - DEBUG - Closing ResourceManager (session: 4097)
+2025-08-08 17:23:51,495 - DEBUG - viClose(4097,) -> 0
